@@ -5,59 +5,45 @@
     --verde: #4ca686; --azul: #385dae; --oscuro: #201751;
     --gris-fondo: #f1f5f9; --blanco: #ffffff;
 }
+body { font-family: 'Titillium Web', sans-serif; background: var(--gris-fondo); }
 
-body { font-family: 'Titillium Web', sans-serif; background-color: var(--blanco); overflow-x: hidden; }
-
-/* BARRA SUPERIOR CORREGIDA */
-.top-brand-strip { height: 35px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; }
-.social-top-bar { width: 90%; max-width: 1750px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; }
-.social-links-min a { color: white; margin-left: 15px; text-decoration: none; font-size: 1.1rem; }
-
-.master-header { background: white; padding: 10px 5% 0; border-bottom: 1px solid #e2e8f0; }
-.header-grid { display: grid; grid-template-columns: 1fr 550px 1fr; align-items: center; max-width: 1750px; margin: 0 auto; gap: 40px; }
-.img-500 { width: 500px; display: block; margin: 0 auto; }
-.main-title { font-size: 2.8rem; font-weight: 900; color: var(--oscuro); line-height: 0.85; }
-.v-accent { color: var(--verde); }
-.info-bubble-premium { background: white; padding: 20px; border-radius: 15px; border-left: 8px solid var(--verde); box-shadow: 10px 10px 30px rgba(0,0,0,0.05); }
+/* HEADER */
+.top-brand-strip { background: var(--oscuro); padding: 10px; color: white; text-align: center; }
+.master-header { background: white; padding: 20px 0; text-align: center; border-bottom: 3px solid var(--verde); }
+.img-500 { width: 500px; max-width: 90% !important; height: auto; }
 
 /* NAV */
-.nav-global { margin-top: 15px; padding: 22px 0; border-top: 1px solid #f1f5f9; }
-.nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; }
-.nav-link { text-decoration: none; color: #0f172a; font-weight: 900; text-transform: uppercase; font-size: 1.1rem; }
-.nav-cta.active { background: var(--verde); color: white !important; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 900; }
+.nav-list { display: flex; justify-content: center; gap: 20px; list-style: none; padding: 20px; background: white; }
+.nav-link { text-decoration: none; color: var(--oscuro); font-weight: 700; }
+.nav-link.active { color: var(--verde); }
 
-/* CONTACT LAYOUT */
-.contact-layout { padding: 80px 10%; background: #f8fafc; }
-.contact-grid-wrapper { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start; }
+/* CONTENIDO CONTACTO */
+.contact-hero { background: var(--azul); color: white; text-align: center; padding: 60px 20px; }
+.contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 50px 10%; max-width: 1400px; margin: 0 auto; }
 
-.mini-info-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 25px; border-left: 8px solid var(--azul); }
-.mini-info-card i { font-size: 2.2rem; color: var(--verde); margin-bottom: 15px; }
-.mini-info-card h4 { font-weight: 900; color: var(--oscuro); margin-bottom: 5px; }
+.contact-form-box { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.contact-form-box input, .contact-form-box textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
+.btn-send { width: 100%; background: var(--verde); color: white; padding: 15px; border: none; border-radius: 8px; font-weight: 900; cursor: pointer; }
 
-/* FORMULARIO */
-.form-container-premium { background: white; padding: 50px; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.input-box { margin-bottom: 25px; display: flex; flex-direction: column; }
-.input-box label { font-weight: 700; color: var(--oscuro); margin-bottom: 10px; font-size: 0.9rem; }
-.input-box input, .input-box select, .input-box textarea { padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; font-family: inherit; background: #f8fafc; }
-.btn-send-contact { background: var(--verde); color: white; border: none; padding: 20px; border-radius: 12px; font-weight: 900; font-size: 1.1rem; cursor: pointer; transition: 0.3s; width: 100%; }
+.info-card { background: white; padding: 30px; border-radius: 15px; margin-bottom: 20px; text-align: center; border-left: 8px solid var(--azul); }
+.info-card.featured { border-left-color: #25d366; }
+.btn-wa-contact { display: inline-block; margin-top: 15px; background: #25d366; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 900; }
 
-/* IDENTIDAD */
-.identity-section { padding: 60px 10%; background: #f8fafc; }
-.id-card { display: flex; align-items: center; gap: 40px; background: white; padding: 40px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 1200px; margin: 0 auto; }
-.id-icon-box { font-size: 4rem; color: var(--verde); background: var(--oscuro); width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; border-radius: 20px; flex-shrink: 0; }
-.id-text h2 { color: var(--oscuro); font-weight: 900; margin-bottom: 10px; }
+.f-bottom-copyright { background: var(--oscuro); color: white; padding: 20px; text-align: center; }
 
-/* FOOTER */
-.footer-master { background: var(--blanco); border-top: 1px solid #e2e8f0; position: relative; padding-top: 80px; }
-.f-top-accent { height: 12px; background: var(--verde); width: 100%; position: absolute; top: 0; left: 0; }
-.footer-container { max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 80px; padding: 0 5% 80px; align-items: start; }
-.f-logo-footer { width: 320px; margin-bottom: 25px; }
-.social-box-isolated { background: #f1f5f9; padding: 20px 25px; border-radius: 15px; border-left: 10px solid var(--azul); box-shadow: 0 10px 20px rgba(0,0,0,0.05); display: inline-block; margin-top: 10px; }
-.soc-row { display: flex; gap: 20px; }
-.f-header { color: var(--verde); font-weight: 900; font-size: 1.5rem; margin-bottom: 30px; text-transform: uppercase; }
-.info-card-isolated p { font-weight: 700; color: #334155; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-.sgs-card-isolated-large { background: #f1f5f9; padding: 35px; border-radius: 20px; text-align: center; border-top: 8px solid var(--azul); }
-.sgs-percentage { font-size: 3.5rem; font-weight: 900; color: var(--azul); display: block; }
-.f-bottom-copyright { background: var(--oscuro); color: white; padding: 25px; text-align: center; font-weight: 700; }
-.wa-float { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; width: 75px; height: 75px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-decoration: none; }
+/* ==========================================
+   MEDIA QUERIES (ESTO ES PARA EL CELULAR)
+   ========================================== */
+@media (max-width: 768px) {
+    /* El logo se ajusta */
+    .img-500 { width: 100%; }
+
+    /* El menú se pone en columnas para que no se amontone */
+    .nav-list { flex-direction: column; gap: 10px; }
+
+    /* El formulario y la info pasan de 2 columnas a 1 sola */
+    .contact-container { grid-template-columns: 1fr; padding: 20px 5%; }
+
+    /* Los títulos se hacen un poco más pequeños para que quepan */
+    .contact-hero h1 { font-size: 1.8rem; }
+}
