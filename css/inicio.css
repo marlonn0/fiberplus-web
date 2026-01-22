@@ -18,7 +18,7 @@ body { font-family: 'Titillium Web', sans-serif; background-color: var(--blanco)
 /* --- GRID DEL HEADER --- */
 .header-grid { display: grid; grid-template-columns: 1fr 550px 1fr; align-items: center; max-width: 1750px; margin: 0 auto; gap: 40px; }
 
-/* Header Izquierdo */
+/* Header Izquierdo (AJUSTADO) */
 .side-l { transform: translateY(-45px); margin-top: 0; }
 .main-title { font-size: 2.8rem; font-weight: 900; color: var(--oscuro); line-height: 0.85; margin-top: 0; }
 .v-accent { color: var(--verde); }
@@ -92,7 +92,7 @@ body { font-family: 'Titillium Web', sans-serif; background-color: var(--blanco)
     grid-template-columns: 1.5fr 1fr 1fr; 
     gap: 50px; 
     padding: 0 5% 100px; 
-    align-items: flex-start; /* Alineación Superior */
+    align-items: flex-start; /* Evita huecos grises */
 }
 
 /* Columna 1 */
@@ -126,7 +126,7 @@ body { font-family: 'Titillium Web', sans-serif; background-color: var(--blanco)
 .contact-list li { display: flex; align-items: center; margin-bottom: 10px; color: #334155; font-weight: 600; }
 .contact-list li i { color: var(--azul); width: 25px; font-size: 1.1rem; }
 
-/* NUEVOS ESTILOS PARA DIRECCIONES */
+/* TEXTOS DIRECCIONES */
 .divider-mini { border-top: 1px solid #cbd5e1; margin: 15px 0; }
 .loc-title { font-weight: 900; color: var(--oscuro); font-size: 0.95rem; margin-bottom: 5px; }
 .loc-text { font-size: 0.85rem; color: #64748b; line-height: 1.4; margin-bottom: 15px; }
