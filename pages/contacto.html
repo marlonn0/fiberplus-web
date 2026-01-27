@@ -65,7 +65,7 @@
         
         <section class="contact-hero">
             <div class="hero-content">
-                <h2 class="typewriter">CONVERSEMOS </h2>
+                <h2 class="typewriter">CONTÁCTANOS</h2>
                 <p class="hero-subtitle">Estamos listos para dimensionar y ejecutar su próximo proyecto.</p>
             </div>
         </section>
@@ -80,7 +80,7 @@
                     <h4>Nuevos Proyectos</h4>
                     <p>Para cotizaciones, licitaciones y alianzas estratégicas.</p>
                     <a href="mailto:mpalacios@fiberplus.com.ec" class="info-link"><i class="fas fa-envelope"></i> mpalacios@fiberplus.com.ec</a>
-                    <a href="tel:+593984258892" class="info-link"><i class="fas fa-phone"></i> 098 425 8892</a>
+                    <a href="tel:+593987626160" class="info-link"><i class="fas fa-phone"></i> 098 762 6160</a>
                 </div>
 
                 <div class="info-card" style="border-left: 5px solid #ef4444;">
@@ -102,49 +102,49 @@
             <div class="form-col">
                 <div class="form-intro">
                     <h2>Envíenos un Mensaje</h2>
-                    <p>Complete el formulario y su solicitud será derivada al departamento correspondiente de inmediato.</p>
+                    <p>Complete el formulario y se abrirá un chat directo con el departamento seleccionado.</p>
                 </div>
 
-                <form class="fp-form" action="#" method="POST">
+                <form class="fp-form" id="whatsappForm">
                     
                     <div class="form-group full-width">
                         <label for="departamento">¿Con qué área desea contactar? *</label>
                         <select id="departamento" name="departamento" class="form-select" required>
                             <option value="" disabled selected>Seleccione una opción...</option>
-                            <option value="proyectos">Ingeniería y Proyectos (Cotizar)</option>
-                            <option value="soporte">Soporte Técnico / NOC</option>
-                            <option value="rh">Recursos Humanos (Trabaja con nosotros)</option>
-                            <option value="proveedores">Administración / Proveedores</option>
+                            <option value="PROYECTOS">Ingeniería y Proyectos (Cotizar)</option>
+                            <option value="SOPORTE">Soporte Técnico / NOC</option>
+                            <option value="RECURSOS HUMANOS">Recursos Humanos (Empleo)</option>
+                            <option value="PROVEEDORES">Administración / Proveedores</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="nombre">Nombre Completo *</label>
-                        <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Su nombre" required>
+                        <input type="text" id="nombre" class="form-input" placeholder="Su nombre" required>
                     </div>
 
                     <div class="form-group">
                         <label for="empresa">Empresa / Organización</label>
-                        <input type="text" id="empresa" name="empresa" class="form-input" placeholder="Nombre de su empresa">
+                        <input type="text" id="empresa" class="form-input" placeholder="Nombre de su empresa">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Correo Electrónico *</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="ejemplo@empresa.com" required>
+                        <input type="email" id="email" class="form-input" placeholder="ejemplo@empresa.com" required>
                     </div>
 
                     <div class="form-group">
                         <label for="telefono">Teléfono / Celular *</label>
-                        <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="099..." required>
+                        <input type="tel" id="telefono" class="form-input" placeholder="099..." required>
                     </div>
 
                     <div class="form-group full-width">
                         <label for="mensaje">Detalle de su requerimiento *</label>
-                        <textarea id="mensaje" name="mensaje" class="form-textarea" placeholder="Describa su proyecto, incidente o consulta..." required></textarea>
+                        <textarea id="mensaje" class="form-textarea" placeholder="Describa su proyecto, incidente o consulta..." required></textarea>
                     </div>
 
                     <div class="form-group full-width">
-                        <button type="submit" class="btn-submit">ENVIAR MENSAJE <i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="btn-submit">ENVIAR VÍA WHATSAPP <i class="fab fa-whatsapp"></i></button>
                     </div>
 
                 </form>
@@ -170,14 +170,18 @@
                         <i class="fas fa-clock"></i>
                         <p><strong>Oficinas:</strong> Lun-Vie 08:30 - 17:30<br><strong>NOC 24/7:</strong> Atención Permanente</p>
                     </div>
-                    <a href="https://www.google.com/maps?q=-0.154482,-78.491655" target="_blank" class="btn-waze">
+                    <a href="https://www.google.com/maps/search/?api=1&query=-0.154482,-78.491655" target="_blank" class="btn-waze">
                         <i class="fas fa-location-arrow"></i> ABRIR EN GPS
                     </a>
                 </div>
 
                 <iframe 
                     class="g-map" 
-                    src="https://maps.google.com/maps?q=-0.154482,-78.491655+(FIBERPLUS+MATRIZ)&z=19&output=embed" 
+                    src="https://maps.google.com/maps?q=-0.154482,-78.491655&hl=es&z=17&output=embed" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    marginheight="0" 
+                    marginwidth="0" 
                     allowfullscreen="" 
                     loading="lazy">
                 </iframe>
@@ -228,6 +232,33 @@
         <div class="f-bottom-copyright">
             <p>© 2026 Fiberplus Cía. Ltda. | Ingeniería y Telecomunicaciones</p>
         </div>
-    </footer><a href="https://wa.me/593987626160?text=Hola%20Fiberplus,%20quisiera%20m%C3%A1s%20informaci%C3%B3n" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </footer>
+    
+    <a href="https://wa.me/593987626160?text=Hola%20Fiberplus,%20quisiera%20m%C3%A1s%20informaci%C3%B3n" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var departamento = document.getElementById('departamento').value;
+            var nombre = document.getElementById('nombre').value;
+            var empresa = document.getElementById('empresa').value;
+            var email = document.getElementById('email').value;
+            var telefono = document.getElementById('telefono').value;
+            var mensaje = document.getElementById('mensaje').value;
+
+            var texto = "*NUEVA SOLICITUD DESDE LA WEB*%0A%0A" +
+                        "📌 *Departamento:* " + departamento + "%0A" +
+                        "👤 *Nombre:* " + nombre + "%0A" +
+                        "🏢 *Empresa:* " + empresa + "%0A" +
+                        "📧 *Email:* " + email + "%0A" +
+                        "📱 *Teléfono:* " + telefono + "%0A" +
+                        "📝 *Mensaje:* " + mensaje;
+
+            var url = "https://wa.me/593987626160?text=" + texto;
+            window.open(url, '_blank');
+        });
+    </script>
+
 </body>
 </html>
