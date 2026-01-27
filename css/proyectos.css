@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
 
-/* --- 1. BASES --- */
+/* --- BASES --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -14,7 +14,7 @@ html, body {
     width: 100%; max-width: 100%; overflow-x: hidden; position: relative;
 }
 
-/* --- 2. HEADER Y NAVEGACIÓN --- */
+/* --- HEADER --- */
 .top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
 .social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; height: 100%; }
 .top-logo-container { background-color: white; height: 40px; width: 110px; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.3); z-index: 10; }
@@ -37,112 +37,73 @@ html, body {
 .nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); padding-bottom: 5px; }
 .nav-cta { background: var(--verde); color: white !important; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 900; }
 
-/* --- 3. BANNER HERO (CORREGIDO) --- */
-.negocios-hero {
-    height: 550px;
+/* --- HERO SECTION --- */
+.projects-hero {
+    height: 500px;
     width: 100%;
-    /* Sintaxis combinada para asegurar que cargue */
-    background: linear-gradient(rgba(32, 23, 81, 0.85), rgba(32, 23, 81, 0.85)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070');
+    background-color: #201751;
+    /* IMAGEN DE FONDO (Mapa/Construcción) */
+    background: linear-gradient(rgba(32, 23, 81, 0.85), rgba(32, 23, 81, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
-
 .hero-content { position: relative; z-index: 5; color: white; max-width: 1200px; padding: 0 15px; width: 100%; }
-
-/* Animación Texto */
-.typewriter {
-    font-size: 3.5rem;
-    font-weight: 900;
-    border-right: 5px solid var(--verde);
-    white-space: nowrap;
-    overflow: hidden;
-    margin: 0 auto;
-    padding-right: 5px;
-    color: white;
-    text-transform: uppercase;
-    animation: typing 3s steps(30, end) forwards, blink .8s infinite;
-    width: 0;
-    max-width: 100%;
-}
-.hero-subtitle { font-size: 1.5rem; margin: 20px 0 35px; font-weight: 600; opacity: 0.9; color: white; }
+.typewriter { font-size: 3.5rem; font-weight: 900; border-right: 5px solid var(--verde); white-space: nowrap; overflow: hidden; margin: 0 auto; padding-right: 5px; color: white; text-transform: uppercase; animation: typing 3s steps(30, end) forwards, blink .8s infinite; width: 0; max-width: 100%; }
+.hero-subtitle { font-size: 1.6rem; margin: 20px 0 35px; font-weight: 600; opacity: 0.9; color: white; }
 @keyframes typing { from { width: 0 } to { width: 100% } }
 @keyframes blink { 50% { border-color: transparent } }
 
-/* --- 4. CONTENIDO (Ingeniería y Servicios) --- */
-.intro-biz { padding: 80px 15%; text-align: center; background: white; }
-.intro-biz h2 { color: var(--oscuro); font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
-.intro-biz p { color: #64748b; font-size: 1.2rem; line-height: 1.6; max-width: 900px; margin: 0 auto; }
+/* --- LOGÍSTICA --- */
+.logistics-section { padding: 80px 10%; background: white; text-align: center; }
+.log-header h2 { color: var(--oscuro); font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
+.log-header p { color: #64748b; font-size: 1.1rem; max-width: 800px; margin: 0 auto 50px; }
 
-.services-section { background-color: #f8fafc; padding: 80px 5%; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; }
+.regions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.region-card { border: 1px solid #e2e8f0; border-radius: 15px; padding: 30px; transition: 0.3s; background: #f8fafc; }
+.region-card:hover { transform: translateY(-10px); background: white; box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: var(--verde); }
+.reg-icon { font-size: 3rem; color: var(--azul); margin-bottom: 20px; }
+.region-card h3 { color: var(--oscuro); font-weight: 800; font-size: 1.3rem; margin-bottom: 15px; }
+.region-card ul { list-style: none; padding: 0; text-align: left; }
+.region-card li { color: #64748b; margin-bottom: 10px; display: flex; align-items: center; font-size: 0.95rem; }
+.region-card li i { color: var(--verde); margin-right: 10px; font-size: 0.8rem; }
 
-.service-card { 
-    background: white; 
-    border-radius: 20px; 
-    overflow: hidden; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-    border: 1px solid #e2e8f0; 
-    transition: transform 0.3s ease;
-    display: flex; flex-direction: column;
-}
-.service-card:hover { transform: translateY(-10px); border-color: var(--verde); }
+/* --- ESTADÍSTICAS --- */
+.stats-bar { background: var(--verde); padding: 50px 10%; color: white; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; text-align: center; }
+.stat-item h3 { font-size: 3rem; font-weight: 900; margin-bottom: 5px; }
+.stat-item p { font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-.card-header { height: 220px; overflow: hidden; position: relative; }
-.card-header img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-.service-card:hover .card-header img { transform: scale(1.1); }
-.card-icon { 
-    position: absolute; bottom: -30px; right: 30px; 
-    width: 60px; height: 60px; background: var(--verde); color: white; 
-    border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-    font-size: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
+/* --- GALERÍA --- */
+.projects-gallery { padding: 80px 5%; background: #f1f5f9; }
+.gallery-header { text-align: center; margin-bottom: 50px; }
+.gallery-header h2 { color: var(--oscuro); font-size: 2.5rem; font-weight: 900; }
 
-.card-body { padding: 40px 30px 30px; }
-.card-body h3 { color: var(--oscuro); font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; }
-.card-body p { color: #64748b; font-size: 1rem; line-height: 1.6; margin-bottom: 25px; }
-.check-list { list-style: none; margin-bottom: 25px; }
-.check-list li { display: flex; align-items: center; margin-bottom: 8px; color: #334155; font-weight: 600; font-size: 0.9rem; }
-.check-list li i { color: var(--verde); margin-right: 10px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
+.project-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+.project-card:hover { transform: scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+.p-img { width: 100%; height: 250px; object-fit: cover; }
+.p-info { padding: 25px; }
+.p-tag { background: var(--azul); color: white; padding: 5px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: inline-block; }
+.p-info h3 { color: var(--oscuro); font-weight: 900; font-size: 1.4rem; margin-bottom: 10px; }
+.p-info p { color: #64748b; font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; }
+.p-loc { font-weight: 700; color: var(--verde); font-size: 0.9rem; display: flex; align-items: center; gap: 5px; }
 
-.btn-card { 
-    display: block; text-align: center; background: var(--oscuro); color: white; 
-    padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: 0.3s; 
-}
-.btn-card:hover { background: var(--verde); }
-
-/* --- 5. CTA FINAL --- */
-.cta-final { 
-    /* IMAGEN ÚNICA: Planos técnicos */
-    background: linear-gradient(rgba(32, 23, 81, 0.9), rgba(32, 23, 81, 0.9)), url('https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070');
-    background-size: cover; 
-    background-attachment: fixed;
-    padding: 120px 5%; 
-    text-align: center; 
-    color: white; 
-}
-.cta-final h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 25px; }
-.cta-final p { font-size: 1.3rem; margin-bottom: 45px; opacity: 0.95; max-width: 800px; margin-left: auto; margin-right: auto; }
-.btn-cta-big { 
-    background: var(--verde); color: white; padding: 18px 45px; border-radius: 50px; 
-    font-size: 1.2rem; font-weight: 900; text-decoration: none; display: inline-block; 
-    transition: 0.3s; box-shadow: 0 15px 30px rgba(76, 166, 134, 0.4); border: 2px solid var(--verde);
-}
-.btn-cta-big:hover { transform: translateY(-5px); background: transparent; color: var(--verde); }
-
-/* --- 6. FOOTER --- */
+/* --- FOOTER --- */
 .footer-master { background: var(--blanco); border-top: 1px solid #e2e8f0; position: relative; padding-top: 80px; }
 .f-top-accent { height: 12px; background: var(--verde); width: 100%; position: absolute; top: 0; left: 0; }
 .footer-container { max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; padding: 0 5% 100px; align-items: flex-start; }
+.f-col-brand { display: flex; flex-direction: column; justify-content: flex-start; }
 .f-logo-footer { width: 320px; margin-bottom: 20px; }
 .brand-desc { color: #64748b; margin-bottom: 25px; font-size: 0.95rem; max-width: 80%; }
 .social-clean-row { display: flex; gap: 15px; }
 .soc-icon { width: 45px; height: 45px; background: var(--oscuro); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; transition: 0.3s; }
 .soc-icon:hover { background: var(--verde); transform: translateY(-3px); }
+.f-col-uniform { display: flex; flex-direction: column; }
 .footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; height: auto; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
 .highlight-card { border-top: 6px solid var(--azul); text-align: center; }
 .f-header { color: var(--verde); font-weight: 900; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
@@ -158,16 +119,15 @@ html, body {
 .f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
 .wa-float { position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 768px) {
-    .top-text-center { position: static; transform: none; margin: 10px 0; }
-    .social-top-bar { flex-direction: column; padding: 10px 0; height: auto; }
     .header-grid { display: flex; flex-direction: column; gap: 20px; text-align: center; padding-bottom: 20px; }
     .img-500 { width: 80%; max-width: 280px; } 
     .nav-list { flex-direction: column; gap: 0; padding: 0; }
     .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
-    .negocios-hero { height: auto; padding: 80px 20px; }
+    .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
+    .projects-hero { height: auto; padding: 80px 20px; }
     .typewriter { font-size: 1.5rem; white-space: normal; width: 100%; border: none; animation: none; text-align: center; }
+    .stats-bar { flex-direction: column; gap: 30px; }
     .footer-container { grid-template-columns: 1fr; gap: 40px; }
-    .intro-biz { padding: 50px 5%; }
 }

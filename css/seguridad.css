@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
 
-/* --- 1. BASES --- */
+/* --- BASES --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
     --verde: #4ca686; --azul: #385dae; --oscuro: #201751;
     --gris-fondo: #f1f5f9; --blanco: #ffffff;
+    --seguridad: #eab308; /* Amarillo Industrial para resaltar seguridad */
 }
 
 html, body { 
@@ -14,7 +15,7 @@ html, body {
     width: 100%; max-width: 100%; overflow-x: hidden; position: relative;
 }
 
-/* --- 2. HEADER Y NAVEGACIÓN --- */
+/* --- HEADER --- */
 .top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
 .social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; height: 100%; }
 .top-logo-container { background-color: white; height: 40px; width: 110px; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.3); z-index: 10; }
@@ -37,112 +38,78 @@ html, body {
 .nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); padding-bottom: 5px; }
 .nav-cta { background: var(--verde); color: white !important; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 900; }
 
-/* --- 3. BANNER HERO (CORREGIDO) --- */
-.negocios-hero {
-    height: 550px;
+/* --- HERO SECTION (CORREGIDO Y OPTIMIZADO) --- */
+.safety-hero {
+    height: 500px;
     width: 100%;
-    /* Sintaxis combinada para asegurar que cargue */
-    background: linear-gradient(rgba(32, 23, 81, 0.85), rgba(32, 23, 81, 0.85)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070');
-    background-size: cover;
-    background-position: center;
+    background-color: #201751;
+    
+    /* Imagen de fondo con degradado */
+    background-image: 
+        linear-gradient(rgba(32, 23, 81, 0.85), rgba(32, 23, 81, 0.85)), 
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070');
+    
+    /* PROPIEDADES CLAVE PARA QUE SE VEA BIEN */
+    background-size: cover;       /* Cubre todo el espacio sin deformarse */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat; /* EVITA QUE SE REPITA LA IMAGEN */
+    
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
-
 .hero-content { position: relative; z-index: 5; color: white; max-width: 1200px; padding: 0 15px; width: 100%; }
-
-/* Animación Texto */
-.typewriter {
-    font-size: 3.5rem;
-    font-weight: 900;
-    border-right: 5px solid var(--verde);
-    white-space: nowrap;
-    overflow: hidden;
-    margin: 0 auto;
-    padding-right: 5px;
-    color: white;
-    text-transform: uppercase;
-    animation: typing 3s steps(30, end) forwards, blink .8s infinite;
-    width: 0;
-    max-width: 100%;
-}
-.hero-subtitle { font-size: 1.5rem; margin: 20px 0 35px; font-weight: 600; opacity: 0.9; color: white; }
+.typewriter { font-size: 3.5rem; font-weight: 900; border-right: 5px solid var(--seguridad); white-space: nowrap; overflow: hidden; margin: 0 auto; padding-right: 5px; color: white; text-transform: uppercase; animation: typing 3s steps(30, end) forwards, blink .8s infinite; width: 0; max-width: 100%; }
+.hero-subtitle { font-size: 1.6rem; margin: 20px 0 35px; font-weight: 600; opacity: 0.9; color: white; }
 @keyframes typing { from { width: 0 } to { width: 100% } }
 @keyframes blink { 50% { border-color: transparent } }
 
-/* --- 4. CONTENIDO (Ingeniería y Servicios) --- */
-.intro-biz { padding: 80px 15%; text-align: center; background: white; }
-.intro-biz h2 { color: var(--oscuro); font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
-.intro-biz p { color: #64748b; font-size: 1.2rem; line-height: 1.6; max-width: 900px; margin: 0 auto; }
+/* --- POLÍTICA HSSE --- */
+.hsse-section { padding: 80px 10%; background: white; text-align: center; }
+.hsse-header h2 { font-size: 2.5rem; font-weight: 900; color: var(--oscuro); margin-bottom: 20px; }
+.hsse-header p { font-size: 1.1rem; color: #64748b; max-width: 800px; margin: 0 auto 50px; }
 
-.services-section { background-color: #f8fafc; padding: 80px 5%; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; }
+.hsse-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.hsse-card { background: #f8fafc; padding: 40px; border-radius: 20px; border-bottom: 5px solid var(--verde); transition: 0.3s; }
+.hsse-card:hover { transform: translateY(-10px); background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.h-icon { font-size: 3.5rem; color: var(--azul); margin-bottom: 25px; }
+.hsse-card h3 { font-size: 1.5rem; font-weight: 900; color: var(--oscuro); margin-bottom: 15px; }
+.hsse-card p { font-size: 1rem; color: #475569; line-height: 1.6; }
 
-.service-card { 
-    background: white; 
-    border-radius: 20px; 
-    overflow: hidden; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-    border: 1px solid #e2e8f0; 
-    transition: transform 0.3s ease;
-    display: flex; flex-direction: column;
-}
-.service-card:hover { transform: translateY(-10px); border-color: var(--verde); }
+/* --- ESTADÍSTICAS CERO ACCIDENTES --- */
+.safety-stats { background: var(--oscuro); color: white; padding: 60px 10%; text-align: center; }
+.safety-stats h2 { font-size: 2.2rem; font-weight: 900; margin-bottom: 10px; }
+.stats-flex { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; margin-top: 40px; }
+.s-stat { flex: 1; min-width: 200px; }
+.s-number { font-size: 4rem; font-weight: 900; color: var(--seguridad); display: block; line-height: 1; margin-bottom: 10px; }
+.s-label { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
 
-.card-header { height: 220px; overflow: hidden; position: relative; }
-.card-header img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-.service-card:hover .card-header img { transform: scale(1.1); }
-.card-icon { 
-    position: absolute; bottom: -30px; right: 30px; 
-    width: 60px; height: 60px; background: var(--verde); color: white; 
-    border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-    font-size: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
+/* --- EQUIPAMIENTO Y EPP --- */
+.ppe-section { padding: 80px 10%; background: #ffffff; }
+.ppe-container { display: flex; align-items: center; gap: 60px; max-width: 1400px; margin: 0 auto; }
+.ppe-text { flex: 1; }
+.ppe-text h2 { font-size: 2.5rem; font-weight: 900; color: var(--oscuro); margin-bottom: 20px; }
+.ppe-list { list-style: none; margin-top: 30px; }
+.ppe-list li { margin-bottom: 25px; display: flex; align-items: flex-start; gap: 15px; }
+.ppe-list i { color: var(--verde); font-size: 1.5rem; margin-top: 5px; flex-shrink: 0; }
+.ppe-list h4 { font-size: 1.2rem; font-weight: 800; color: var(--oscuro); margin-bottom: 5px; }
+.ppe-list p { color: #64748b; font-size: 1rem; line-height: 1.5; }
+.ppe-image { flex: 1; }
+.ppe-img-real { width: 100%; border-radius: 20px; box-shadow: -20px 20px 0px var(--azul); object-fit: cover; }
 
-.card-body { padding: 40px 30px 30px; }
-.card-body h3 { color: var(--oscuro); font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; }
-.card-body p { color: #64748b; font-size: 1rem; line-height: 1.6; margin-bottom: 25px; }
-.check-list { list-style: none; margin-bottom: 25px; }
-.check-list li { display: flex; align-items: center; margin-bottom: 8px; color: #334155; font-weight: 600; font-size: 0.9rem; }
-.check-list li i { color: var(--verde); margin-right: 10px; }
-
-.btn-card { 
-    display: block; text-align: center; background: var(--oscuro); color: white; 
-    padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: 0.3s; 
-}
-.btn-card:hover { background: var(--verde); }
-
-/* --- 5. CTA FINAL --- */
-.cta-final { 
-    /* IMAGEN ÚNICA: Planos técnicos */
-    background: linear-gradient(rgba(32, 23, 81, 0.9), rgba(32, 23, 81, 0.9)), url('https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070');
-    background-size: cover; 
-    background-attachment: fixed;
-    padding: 120px 5%; 
-    text-align: center; 
-    color: white; 
-}
-.cta-final h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 25px; }
-.cta-final p { font-size: 1.3rem; margin-bottom: 45px; opacity: 0.95; max-width: 800px; margin-left: auto; margin-right: auto; }
-.btn-cta-big { 
-    background: var(--verde); color: white; padding: 18px 45px; border-radius: 50px; 
-    font-size: 1.2rem; font-weight: 900; text-decoration: none; display: inline-block; 
-    transition: 0.3s; box-shadow: 0 15px 30px rgba(76, 166, 134, 0.4); border: 2px solid var(--verde);
-}
-.btn-cta-big:hover { transform: translateY(-5px); background: transparent; color: var(--verde); }
-
-/* --- 6. FOOTER --- */
+/* --- FOOTER --- */
 .footer-master { background: var(--blanco); border-top: 1px solid #e2e8f0; position: relative; padding-top: 80px; }
 .f-top-accent { height: 12px; background: var(--verde); width: 100%; position: absolute; top: 0; left: 0; }
 .footer-container { max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; padding: 0 5% 100px; align-items: flex-start; }
+.f-col-brand { display: flex; flex-direction: column; justify-content: flex-start; }
 .f-logo-footer { width: 320px; margin-bottom: 20px; }
 .brand-desc { color: #64748b; margin-bottom: 25px; font-size: 0.95rem; max-width: 80%; }
 .social-clean-row { display: flex; gap: 15px; }
 .soc-icon { width: 45px; height: 45px; background: var(--oscuro); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; transition: 0.3s; }
 .soc-icon:hover { background: var(--verde); transform: translateY(-3px); }
+.f-col-uniform { display: flex; flex-direction: column; }
 .footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; height: auto; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
 .highlight-card { border-top: 6px solid var(--azul); text-align: center; }
 .f-header { color: var(--verde); font-weight: 900; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
@@ -158,16 +125,16 @@ html, body {
 .f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
 .wa-float { position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 768px) {
-    .top-text-center { position: static; transform: none; margin: 10px 0; }
-    .social-top-bar { flex-direction: column; padding: 10px 0; height: auto; }
     .header-grid { display: flex; flex-direction: column; gap: 20px; text-align: center; padding-bottom: 20px; }
     .img-500 { width: 80%; max-width: 280px; } 
     .nav-list { flex-direction: column; gap: 0; padding: 0; }
     .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
-    .negocios-hero { height: auto; padding: 80px 20px; }
+    .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
+    .safety-hero { height: auto; padding: 80px 20px; }
     .typewriter { font-size: 1.5rem; white-space: normal; width: 100%; border: none; animation: none; text-align: center; }
+    .ppe-container { flex-direction: column; gap: 40px; }
+    .stats-flex { flex-direction: column; gap: 30px; }
     .footer-container { grid-template-columns: 1fr; gap: 40px; }
-    .intro-biz { padding: 50px 5%; }
 }
