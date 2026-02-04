@@ -17,7 +17,7 @@
                 <img src="../assets/img/logo-mini.png" alt="Fiberplus" class="top-bar-logo">
             </div>
             <div class="top-text-center">
-                <span class="contact-hint">RESPUESTA GARANTIZADA EN 24H</span>
+                <span class="contact-hint">INGENIERÍA DE VANGUARDIA CERTIFICADA</span>
             </div>
             <div class="social-links-min">
                 <span class="follow-text">SÍGUENOS:</span>
@@ -41,7 +41,7 @@
             </div>
             <div class="h-col side-r">
                 <div class="info-bubble-premium">
-                    <p>Canales directos para Clientes, Proveedores y Talento Humano.</p>
+                    <p>Atención personalizada para grandes proyectos.</p>
                 </div>
             </div>
         </div>
@@ -55,8 +55,7 @@
                 <li><a href="proyectos.html" class="nav-link">PROYECTOS</a></li>
                 <li><a href="seguridad.html" class="nav-link">SEGURIDAD</a></li>
                 <li><a href="soporte.html" class="nav-link">SOPORTE</a></li>
-                
-                <li><a href="contacto.html" class="nav-cta">CONTÁCTANOS</a></li>
+                <li><a href="contacto.html" class="nav-link active">CONTÁCTANOS</a></li>
             </ul>
         </nav>
     </header>
@@ -65,8 +64,8 @@
         
         <section class="contact-hero">
             <div class="hero-content">
-                <h2 class="typewriter">CONTÁCTANOS</h2>
-                <p class="hero-subtitle">Estamos listos para dimensionar y ejecutar su próximo proyecto.</p>
+                <h2 class="typewriter">HABLEMOS DE SU PROYECTO</h2>
+                <p class="hero-subtitle">Estamos listos para dimensionar su próximo requerimiento de telecomunicaciones.</p>
             </div>
         </section>
 
@@ -76,75 +75,82 @@
                 <h3>CANALES DIRECTOS</h3>
                 
                 <div class="info-card">
-                    <div class="i-icon"><i class="fas fa-briefcase"></i></div>
-                    <h4>Nuevos Proyectos</h4>
-                    <p>Para cotizaciones, licitaciones y alianzas estratégicas.</p>
-                    <a href="mailto:mpalacios@fiberplus.com.ec" class="info-link"><i class="fas fa-envelope"></i> mpalacios@fiberplus.com.ec</a>
-                    <a href="tel:+593987626160" class="info-link"><i class="fas fa-phone"></i> 098 762 6160</a>
-                </div>
-
-                <div class="info-card" style="border-left: 5px solid #ef4444;">
-                    <div class="i-icon" style="color: #ef4444;"><i class="fas fa-exclamation-triangle"></i></div>
-                    <h4>Emergencias / NOC</h4>
-                    <p>Reporte de cortes, fallas de enlace o soporte técnico 24/7.</p>
-                    <a href="soporte.html" class="info-link" style="color: #ef4444;">IR A CENTRO DE SOPORTE <i class="fas fa-arrow-right"></i></a>
+                    <div class="i-icon"><i class="fas fa-phone-volume"></i></div>
+                    <h4>Línea Comercial</h4>
+                    <p>Atención inmediata para cotizaciones.</p>
+                    <a href="https://wa.me/593987626160" class="info-link" target="_blank">098 762 6160</a>
                 </div>
 
                 <div class="info-card">
-                    <div class="i-icon"><i class="fas fa-users"></i></div>
-                    <h4>Talento Humano</h4>
-                    <p>¿Eres ingeniero o técnico liniero? Envíanos tu hoja de vida.</p>
-                    <p style="font-size: 0.9rem; margin-top: 5px;"><strong>Ref:</strong> Selección de Personal</p>
+                    <div class="i-icon"><i class="fas fa-envelope-open-text"></i></div>
+                    <h4>Correo Electrónico</h4>
+                    <p>Recepción de planos y RFPs.</p>
+                    <a href="mailto:mpalacios@fiberplus.com.ec" class="info-link">mpalacios@fiberplus.com.ec</a>
                 </div>
 
+                <div class="info-card">
+                    <div class="i-icon"><i class="fas fa-user-tie"></i></div>
+                    <h4>Recursos Humanos</h4>
+                    <p>Envíe su hoja de vida aquí.</p>
+                    <a href="mailto:rrhh@fiberplus.com.ec" class="info-link">rrhh@fiberplus.com.ec</a>
+                </div>
+
+                <div class="info-card">
+                    <div class="i-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h4>Matriz Quito</h4>
+                    <p>Calle Juan Illingworth OE3-52 y Av. Brasil.</p>
+                    <span style="font-size: 0.9rem; color: #64748b;">(Sector Quito Tenis)</span>
+                </div>
             </div>
 
             <div class="form-col">
                 <div class="form-intro">
-                    <h2>Envíenos un Mensaje</h2>
-                    <p>Complete el formulario y se abrirá un chat directo con el departamento seleccionado.</p>
+                    <h2>SOLICITAR COTIZACIÓN</h2>
+                    <p>Complete el formulario y un ingeniero se contactará vía WhatsApp.</p>
                 </div>
 
-                <form class="fp-form" id="whatsappForm">
+                <form id="contactForm" class="fp-form" onsubmit="enviarAWhatsApp(event)">
                     
                     <div class="form-group full-width">
-                        <label for="departamento">¿Con qué área desea contactar? *</label>
-                        <select id="departamento" name="departamento" class="form-select" required>
+                        <label><i class="fas fa-building" style="color:#4ca686"></i> Departamento / Área</label>
+                        <select id="departamento" class="form-select" required>
                             <option value="" disabled selected>Seleccione una opción...</option>
-                            <option value="PROYECTOS">Ingeniería y Proyectos (Cotizar)</option>
-                            <option value="SOPORTE">Soporte Técnico / NOC</option>
-                            <option value="RECURSOS HUMANOS">Recursos Humanos (Empleo)</option>
-                            <option value="PROVEEDORES">Administración / Proveedores</option>
+                            <option value="Proyectos">Ingeniería y Proyectos</option>
+                            <option value="Comercial">Ventas y Cotizaciones</option>
+                            <option value="Soporte">Soporte Técnico</option>
+                            <option value="RRHH">Recursos Humanos (Consultas)</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="nombre">Nombre Completo *</label>
-                        <input type="text" id="nombre" class="form-input" placeholder="Su nombre" required>
+                        <label><i class="fas fa-user" style="color:#4ca686"></i> Su Nombre</label>
+                        <input type="text" id="nombre" class="form-input" placeholder="Ej: Juan Pérez" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="empresa">Empresa / Organización</label>
-                        <input type="text" id="empresa" class="form-input" placeholder="Nombre de su empresa">
+                        <label><i class="fas fa-briefcase" style="color:#4ca686"></i> Empresa</label>
+                        <input type="text" id="empresa" class="form-input" placeholder="Nombre de su empresa" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Correo Electrónico *</label>
-                        <input type="email" id="email" class="form-input" placeholder="ejemplo@empresa.com" required>
+                        <label><i class="fas fa-envelope" style="color:#4ca686"></i> Email Corporativo</label>
+                        <input type="email" id="email" class="form-input" placeholder="nombre@empresa.com" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="telefono">Teléfono / Celular *</label>
-                        <input type="tel" id="telefono" class="form-input" placeholder="099..." required>
+                        <label><i class="fas fa-mobile-alt" style="color:#4ca686"></i> Teléfono</label>
+                        <input type="tel" id="telefono" class="form-input" placeholder="099..." oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                     </div>
 
                     <div class="form-group full-width">
-                        <label for="mensaje">Detalle de su requerimiento *</label>
-                        <textarea id="mensaje" class="form-textarea" placeholder="Describa su proyecto, incidente o consulta..." required></textarea>
+                        <label><i class="fas fa-comment-dots" style="color:#4ca686"></i> Detalle de su requerimiento</label>
+                        <textarea id="mensaje" class="form-textarea" placeholder="Describa brevemente lo que necesita..." required></textarea>
                     </div>
 
                     <div class="form-group full-width">
-                        <button type="submit" class="btn-submit">ENVIAR VÍA WHATSAPP <i class="fab fa-whatsapp"></i></button>
+                        <button type="submit" class="btn-submit">
+                            ENVIAR A WHATSAPP <i class="fab fa-whatsapp"></i>
+                        </button>
                     </div>
 
                 </form>
@@ -154,34 +160,27 @@
 
         <section class="location-section">
             <div class="location-header">
-                <h2>ENCUÉNTRANOS AQUÍ</h2>
-                <div style="width: 80px; height: 5px; background: #385dae; margin: 0 auto 15px;"></div>
-                <p>Nuestra matriz operativa está ubicada estratégicamente en el norte de Quito.</p>
+                <h2>UBICACIÓN ESTRATÉGICA</h2>
+                <p>Nuestras oficinas centrales cuentan con bodega y parqueadero para visitas.</p>
             </div>
-
+            
             <div class="map-frame">
                 <div class="map-card-floating">
-                    <h3>FIBERPLUS MATRIZ</h3>
+                    <h3>FIBERPLUS QUITO</h3>
                     <div class="map-info-item">
-                        <i class="fas fa-map-pin"></i>
-                        <p>Calle Juan Illingworth OE3-52 y Av. Brasil.<br>Quito, Ecuador.</p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Juan Illingworth OE3-52 y Av. Brasil. <br>Quito, Ecuador.</p>
                     </div>
                     <div class="map-info-item">
-                        <i class="fas fa-clock"></i>
-                        <p><strong>Oficinas:</strong> Lun-Vie 08:30 - 17:30<br><strong>NOC 24/7:</strong> Atención Permanente</p>
+                        <i class="far fa-clock"></i>
+                        <p>Lunes a Viernes<br>08:30 AM - 05:30 PM</p>
                     </div>
-                    <a href="https://www.google.com/maps/search/?api=1&query=-0.154482,-78.491655" target="_blank" class="btn-waze">
-                        <i class="fas fa-location-arrow"></i> ABRIR EN GPS
-                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=-0.154497,-78.491674" target="_blank" class="btn-waze"><i class="fas fa-map-marked-alt"></i> ABRIR EN GOOGLE MAPS</a>
                 </div>
-
+                
                 <iframe 
                     class="g-map" 
-                    src="https://maps.google.com/maps?q=-0.154482,-78.491655&hl=es&z=17&output=embed" 
-                    frameborder="0" 
-                    scrolling="no" 
-                    marginheight="0" 
-                    marginwidth="0" 
+                    src="https://maps.google.com/maps?q=-0.154497,-78.491674&hl=es&z=18&output=embed" 
                     allowfullscreen="" 
                     loading="lazy">
                 </iframe>
@@ -212,7 +211,7 @@
                     </ul>
                     <div class="divider-mini"></div>
                     <h5 class="loc-title">MATRIZ QUITO</h5>
-                    <p class="loc-text">Calle Juan Illingworth OE3-52 y Av. Brasil.</p>
+                    <p class="loc-text">Calle Juan Illing worth OE3-52 y Av. Brasil.</p>
                     <h5 class="loc-title">SUCURSAL GUAYAQUIL</h5>
                     <p class="loc-text">Av. Isidro Ayora y Calle 14, Paseo 19B NE.</p>
                 </div>
@@ -220,12 +219,12 @@
 
             <div class="f-col-uniform">
                 <div class="footer-card highlight-card">
-                    <h4 class="f-header">COMPROMISO</h4>
+                    <h4 class="f-header">CALIDAD CERTIFICADA</h4>
                     <div class="sgs-badge">
-                        <span class="big-percent"><i class="fas fa-clock"></i></span>
-                        <span class="sgs-label" style="font-size: 1.1rem; margin-top: 10px; display: block;">RESPUESTA RÁPIDA</span>
+                        <span class="big-percent">96.75%</span>
+                        <span class="sgs-label">CALIFICACIÓN SGS</span>
                     </div>
-                    <p class="sgs-note" style="margin-top: 10px;">Atención Personalizada</p>
+                    <p class="sgs-note">Excelencia en Ingeniería</p>
                 </div>
             </div>
         </div>
@@ -237,28 +236,32 @@
     <a href="https://wa.me/593987626160?text=Hola%20Fiberplus,%20quisiera%20m%C3%A1s%20informaci%C3%B3n" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
-        document.getElementById('whatsappForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        function enviarAWhatsApp(event) {
+            event.preventDefault(); 
 
-            var departamento = document.getElementById('departamento').value;
-            var nombre = document.getElementById('nombre').value;
-            var empresa = document.getElementById('empresa').value;
-            var email = document.getElementById('email').value;
-            var telefono = document.getElementById('telefono').value;
-            var mensaje = document.getElementById('mensaje').value;
+            var departamento = document.getElementById("departamento").value;
+            var nombre = document.getElementById("nombre").value;
+            var empresa = document.getElementById("empresa").value;
+            var email = document.getElementById("email").value;
+            var telefono = document.getElementById("telefono").value;
+            var mensaje = document.getElementById("mensaje").value;
 
-            var texto = "*NUEVA SOLICITUD DESDE LA WEB*%0A%0A" +
-                        "📌 *Departamento:* " + departamento + "%0A" +
-                        "👤 *Nombre:* " + nombre + "%0A" +
-                        "🏢 *Empresa:* " + empresa + "%0A" +
-                        "📧 *Email:* " + email + "%0A" +
-                        "📱 *Teléfono:* " + telefono + "%0A" +
-                        "📝 *Mensaje:* " + mensaje;
+            var telefonoDestino = "593987626160";
 
-            var url = "https://wa.me/593987626160?text=" + texto;
-            window.open(url, '_blank');
-        });
-    </script>
+            var textoMensaje = 
+                "HOLA FIBERPLUS, NUEVA SOLICITUD WEB" + "\n\n" +
+                "Departamento: " + departamento + "\n" +
+                "Nombre: " + nombre + "\n" +
+                "Empresa: " + empresa + "\n" +
+                "Email: " + email + "\n" +
+                "Teléfono: " + telefono + "\n\n" +
+                "Mensaje: " + "\n" + mensaje;
+
+            var mensajeCodificado = encodeURIComponent(textoMensaje);
+
+            window.open("https://wa.me/" + telefonoDestino + "?text=" + mensajeCodificado, "_blank");
+        }
+    </script> 
 
 </body>
 </html>

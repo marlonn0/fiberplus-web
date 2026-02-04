@@ -18,7 +18,7 @@ html, body {
 .top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
 .social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; height: 100%; }
 
-/* --- CORRECCIÓN DE LOGO APLICADA --- */
+/* --- LOGO HEADER --- */
 .top-logo-container { 
     background-color: transparent; 
     height: 40px; 
@@ -36,7 +36,6 @@ html, body {
     transform: scale(3.5); 
     filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3)); 
 }
-/* ------------------------------------- */
 
 .top-text-center { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
 .social-links-min a { color: white; margin-left: 15px; text-decoration: none; font-size: 1.1rem; }
@@ -46,7 +45,24 @@ html, body {
 .side-l { transform: translateY(-45px); margin-top: 0; }
 .main-title { font-size: 2.8rem; font-weight: 900; color: var(--oscuro); line-height: 0.85; margin-top: 0; }
 .v-accent { color: var(--verde); }
-.img-14-ani { width: 240px; height: auto; display: block; margin-bottom: 25px; margin-top: 0; }
+
+/* --- ANIMACIÓN LOGO GIRATORIO --- */
+@keyframes giroInfinito {
+    from { transform: perspective(1000px) rotateY(0deg); }
+    to { transform: perspective(1000px) rotateY(360deg); }
+}
+
+.img-14-ani { 
+    width: 240px; 
+    height: auto; 
+    display: block; 
+    margin-bottom: 25px; 
+    margin-top: 0;
+    animation: giroInfinito 6s linear infinite; 
+    transform-style: preserve-3d;
+}
+/* -------------------------------- */
+
 .img-500 { width: 500px; display: block; margin: 0 auto; }
 .info-bubble-premium { background: white; padding: 20px; border-radius: 15px; border-left: 8px solid var(--verde); box-shadow: 10px 10px 30px rgba(0,0,0,0.05); }
 
@@ -58,10 +74,9 @@ html, body {
 
 /* --- HERO SECTION --- */
 .projects-hero {
-    height: 500px;
+    height: 550px; /* TAMAÑO CORREGIDO */
     width: 100%;
     background-color: #201751;
-    /* IMAGEN DE FONDO (Mapa/Construcción) */
     background: linear-gradient(rgba(32, 23, 81, 0.85), rgba(32, 23, 81, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070');
     background-size: cover;
     background-position: center;
@@ -86,7 +101,18 @@ html, body {
 .regions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
 .region-card { border: 1px solid #e2e8f0; border-radius: 15px; padding: 30px; transition: 0.3s; background: #f8fafc; }
 .region-card:hover { transform: translateY(-10px); background: white; box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: var(--verde); }
-.reg-icon { font-size: 3rem; color: var(--azul); margin-bottom: 20px; }
+
+/* --- ESTILO PARA LAS FOTOS DE LAS REGIONES --- */
+.region-img {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+/* ---------------------------------------------- */
+
 .region-card h3 { color: var(--oscuro); font-weight: 800; font-size: 1.3rem; margin-bottom: 15px; }
 .region-card ul { list-style: none; padding: 0; text-align: left; }
 .region-card li { color: #64748b; margin-bottom: 10px; display: flex; align-items: center; font-size: 0.95rem; }
@@ -97,7 +123,7 @@ html, body {
 .stat-item h3 { font-size: 3rem; font-weight: 900; margin-bottom: 5px; }
 .stat-item p { font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-/* --- GALERÍA --- */
+/* --- GALERÍA (INTACTA) --- */
 .projects-gallery { padding: 80px 5%; background: #f1f5f9; }
 .gallery-header { text-align: center; margin-bottom: 50px; }
 .gallery-header h2 { color: var(--oscuro); font-size: 2.5rem; font-weight: 900; }

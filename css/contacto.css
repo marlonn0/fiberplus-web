@@ -19,7 +19,7 @@ html, body {
 .top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
 .social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; height: 100%; }
 
-/* --- CORRECCIÓN DE LOGO APLICADA --- */
+/* --- LOGO HEADER --- */
 .top-logo-container { 
     background-color: transparent; 
     height: 40px; 
@@ -37,7 +37,6 @@ html, body {
     transform: scale(3.5); 
     filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3)); 
 }
-/* ------------------------------------- */
 
 .top-text-center { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
 .social-links-min a { color: white; margin-left: 15px; text-decoration: none; font-size: 1.1rem; }
@@ -47,7 +46,24 @@ html, body {
 .side-l { transform: translateY(-45px); margin-top: 0; }
 .main-title { font-size: 2.8rem; font-weight: 900; color: var(--oscuro); line-height: 0.85; margin-top: 0; }
 .v-accent { color: var(--verde); }
-.img-14-ani { width: 240px; height: auto; display: block; margin-bottom: 25px; margin-top: 0; }
+
+/* --- ANIMACIÓN LOGO GIRATORIO --- */
+@keyframes giroInfinito {
+    from { transform: perspective(1000px) rotateY(0deg); }
+    to { transform: perspective(1000px) rotateY(360deg); }
+}
+
+.img-14-ani { 
+    width: 240px; 
+    height: auto; 
+    display: block; 
+    margin-bottom: 25px; 
+    margin-top: 0;
+    animation: giroInfinito 6s linear infinite; 
+    transform-style: preserve-3d;
+}
+/* -------------------------------- */
+
 .img-500 { width: 500px; display: block; margin: 0 auto; }
 .info-bubble-premium { background: white; padding: 20px; border-radius: 15px; border-left: 8px solid var(--verde); box-shadow: 10px 10px 30px rgba(0,0,0,0.05); }
 
@@ -59,8 +75,7 @@ html, body {
 
 /* --- HERO CONTACTO --- */
 .contact-hero {
-    min-height: 500px; /* Altura flexible pero mínima de 500px */
-    padding: 80px 20px;
+    height: 550px; /* AJUSTADO A 550PX */
     width: 100%;
     background-color: #201751;
     /* IMAGEN: Reunión de negocios / Oficina moderna */
@@ -87,7 +102,7 @@ html, body {
     margin: 80px auto;
     padding: 0 5%;
     display: grid;
-    grid-template-columns: 1fr 1.8fr; /* Proporción ajustada */
+    grid-template-columns: 1fr 1.8fr; 
     gap: 60px;
 }
 
@@ -102,7 +117,15 @@ html, body {
 .info-link:hover { text-decoration: underline; color: var(--verde); }
 
 /* Columna Derecha: Formulario */
-.form-col { background: white; padding: 50px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-top: 8px solid var(--azul); }
+/* AQUÍ HE QUITADO EL ESPACIO BLANCO EXTRA (padding-bottom: 35px) */
+.form-col { 
+    background: white; 
+    padding: 50px 50px 35px 50px; 
+    border-radius: 20px; 
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08); 
+    border-top: 8px solid var(--azul); 
+}
+
 .form-intro { margin-bottom: 30px; text-align: left; }
 .form-intro h2 { font-size: 2.2rem; font-weight: 900; color: var(--oscuro); margin-bottom: 10px; }
 .form-intro p { color: #64748b; font-size: 1.05rem; }
@@ -138,7 +161,7 @@ html, body {
     box-shadow: 0 20px 50px rgba(0,0,0,0.1);
     border: 5px solid white;
     position: relative;
-    background: #e2e8f0; /* Fondo gris mientras carga */
+    background: #e2e8f0;
 }
 .g-map { width: 100%; height: 100%; border: none; }
 

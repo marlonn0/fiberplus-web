@@ -6,7 +6,7 @@
 :root {
     --verde: #4ca686; --azul: #385dae; --oscuro: #201751;
     --gris-fondo: #f1f5f9; --blanco: #ffffff;
-    --seguridad: #eab308; /* Amarillo Industrial para resaltar seguridad */
+    --seguridad: #eab308; /* Amarillo para resaltar seguridad */
 }
 
 html, body { 
@@ -19,7 +19,6 @@ html, body {
 .top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
 .social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; height: 100%; }
 
-/* --- CORRECCIÓN DE LOGO APLICADA --- */
 .top-logo-container { 
     background-color: transparent; 
     height: 40px; 
@@ -37,7 +36,6 @@ html, body {
     transform: scale(3.5); 
     filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3)); 
 }
-/* ------------------------------------- */
 
 .top-text-center { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
 .social-links-min a { color: white; margin-left: 15px; text-decoration: none; font-size: 1.1rem; }
@@ -47,7 +45,24 @@ html, body {
 .side-l { transform: translateY(-45px); margin-top: 0; }
 .main-title { font-size: 2.8rem; font-weight: 900; color: var(--oscuro); line-height: 0.85; margin-top: 0; }
 .v-accent { color: var(--verde); }
-.img-14-ani { width: 240px; height: auto; display: block; margin-bottom: 25px; margin-top: 0; }
+
+/* --- ANIMACIÓN LOGO GIRATORIO --- */
+@keyframes giroInfinito {
+    from { transform: perspective(1000px) rotateY(0deg); }
+    to { transform: perspective(1000px) rotateY(360deg); }
+}
+
+.img-14-ani { 
+    width: 240px; 
+    height: auto; 
+    display: block; 
+    margin-bottom: 25px; 
+    margin-top: 0;
+    animation: giroInfinito 6s linear infinite; 
+    transform-style: preserve-3d;
+}
+/* -------------------------------- */
+
 .img-500 { width: 500px; display: block; margin: 0 auto; }
 .info-bubble-premium { background: white; padding: 20px; border-radius: 15px; border-left: 8px solid var(--verde); box-shadow: 10px 10px 30px rgba(0,0,0,0.05); }
 
@@ -57,18 +72,17 @@ html, body {
 .nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); padding-bottom: 5px; }
 .nav-cta { background: var(--verde); color: white !important; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 900; }
 
-/* --- HERO SECTION (CORREGIDO Y OPTIMIZADO) --- */
+/* --- HERO SECTION --- */
 .safety-hero {
-    height: 500px;
+    height: 550px; /* IGUALADO A 550PX */
     width: 100%;
     background-color: #201751;
-    /* Imagen de fondo con degradado */
     background-image: 
         linear-gradient(rgba(32, 23, 81, 0.85), rgba(32, 23, 81, 0.85)), 
         url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070');
-    background-size: cover;       /* Cubre todo el espacio sin deformarse */
-    background-position: center;  /* Centra la imagen */
-    background-repeat: no-repeat; /* EVITA QUE SE REPITA LA IMAGEN */
+    background-size: cover;      
+    background-position: center;  
+    background-repeat: no-repeat; 
     position: relative;
     display: flex;
     align-items: center;
@@ -113,6 +127,16 @@ html, body {
 .ppe-list p { color: #64748b; font-size: 1rem; line-height: 1.5; }
 .ppe-image { flex: 1; }
 .ppe-img-real { width: 100%; border-radius: 20px; box-shadow: -20px 20px 0px var(--azul); object-fit: cover; }
+
+/* --- NUEVA SECCIÓN: SALUD Y AMBIENTE --- */
+.emergency-section { padding: 80px 5%; background: #f8fafc; text-align: center; }
+.emergency-header h2 { font-size: 2.5rem; font-weight: 900; color: var(--oscuro); margin-bottom: 15px; }
+.emergency-header p { color: #64748b; margin-bottom: 50px; font-size: 1.1rem; }
+.emergency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+.emer-item { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; }
+.emer-item i { font-size: 2.5rem; color: var(--verde); margin-bottom: 15px; }
+.emer-item h4 { font-weight: 800; color: var(--oscuro); margin-bottom: 10px; font-size: 1.2rem; }
+.emer-item p { color: #64748b; font-size: 0.95rem; }
 
 /* --- FOOTER --- */
 .footer-master { background: var(--blanco); border-top: 1px solid #e2e8f0; position: relative; padding-top: 80px; }

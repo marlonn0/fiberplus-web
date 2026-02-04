@@ -47,7 +47,24 @@ html, body {
 .side-l { transform: translateY(-45px); margin-top: 0; }
 .main-title { font-size: 2.8rem; font-weight: 900; color: var(--oscuro); line-height: 0.85; margin-top: 0; }
 .v-accent { color: var(--verde); }
-.img-14-ani { width: 240px; height: auto; display: block; margin-bottom: 25px; margin-top: 0; }
+
+/* --- ANIMACIÓN LOGO GIRATORIO --- */
+@keyframes giroInfinito {
+    from { transform: perspective(1000px) rotateY(0deg); }
+    to { transform: perspective(1000px) rotateY(360deg); }
+}
+
+.img-14-ani { 
+    width: 240px; 
+    height: auto; 
+    display: block; 
+    margin-bottom: 25px; 
+    margin-top: 0;
+    animation: giroInfinito 6s linear infinite; 
+    transform-style: preserve-3d;
+}
+/* -------------------------------- */
+
 .img-500 { width: 500px; display: block; margin: 0 auto; }
 .info-bubble-premium { background: white; padding: 20px; border-radius: 15px; border-left: 8px solid var(--verde); box-shadow: 10px 10px 30px rgba(0,0,0,0.05); }
 
@@ -59,18 +76,14 @@ html, body {
 
 /* --- HERO SOPORTE (IMAGEN BRILLANTE Y CLARA) --- */
 .support-hero {
-    height: 500px;
+    height: 550px; /* AJUSTADO A 550PX */
     width: 100%;
-    background-color: #201751; /* Color de fondo por si la imagen tarda */
-    
-    /* IMAGEN NUEVA: Tecnología abstracta brillante */
+    background-color: #201751;
     background: linear-gradient(rgba(32, 23, 81, 0.6), rgba(32, 23, 81, 0.6)), 
                 url('https://images.unsplash.com/photo-1516110833967-0b5716ca1387?q=80&w=2074&auto=format&fit=crop');
-        
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
     position: relative;
     display: flex;
     align-items: center;
@@ -80,7 +93,6 @@ html, body {
 .hero-content { position: relative; z-index: 5; color: white; max-width: 1200px; padding: 0 15px; width: 100%; display: flex; flex-direction: column; align-items: center; }
 .hero-badge { background: var(--alerta); color: white; padding: 8px 20px; border-radius: 50px; font-weight: 800; font-size: 0.9rem; margin-bottom: 25px; display: inline-block; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4); }
 
-/* Efecto Máquina de Escribir */
 .typewriter { 
     font-size: 3.5rem; 
     font-weight: 900; 

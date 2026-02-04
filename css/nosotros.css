@@ -23,15 +23,14 @@ html, body {
 .top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
 .social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; height: 100%; }
 
-/* --- CORRECCIÓN DE LOGO APLICADA AQUÍ --- */
+/* --- CORRECCIÓN DE LOGO --- */
 .top-logo-container { 
-    background-color: transparent; /* Antes era white */
+    background-color: transparent; 
     height: 40px; 
     width: 110px; 
-    /* border-radius: 6px; ELIMINADO */
     display: flex; align-items: center; justify-content: center; 
-    overflow: visible; /* IMPORTANTE: Para que no se corte al agrandarlo */
-    box-shadow: none; /* ELIMINADO */
+    overflow: visible; 
+    box-shadow: none; 
     z-index: 10; 
 }
 
@@ -39,7 +38,7 @@ html, body {
     height: 100%; 
     width: 100%; 
     object-fit: contain; 
-    transform: scale(3.5); /* AUMENTADO A 3.5 */
+    transform: scale(3.5); 
     filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3)); 
 }
 /* ---------------------------------------- */
@@ -53,7 +52,26 @@ html, body {
 .side-l { transform: translateY(-45px); margin-top: 0; }
 .main-title { font-size: 2.8rem; font-weight: 900; color: var(--oscuro); line-height: 0.85; margin-top: 0; }
 .v-accent { color: var(--verde); }
-.img-14-ani { width: 240px; height: auto; display: block; margin-bottom: 25px; margin-top: 0; }
+
+/* --- AQUÍ ESTÁ EL CAMBIO SOLICITADO (GIRO INFINITO) --- */
+@keyframes giroInfinito {
+    from { transform: perspective(1000px) rotateY(0deg); }
+    to { transform: perspective(1000px) rotateY(360deg); }
+}
+
+.img-14-ani { 
+    width: 240px; 
+    height: auto; 
+    display: block; 
+    margin-bottom: 25px; 
+    margin-top: 0;
+    
+    /* Animación agregada: */
+    animation: giroInfinito 6s linear infinite; 
+    transform-style: preserve-3d;
+}
+/* ---------------------------------------------------- */
+
 .img-500 { width: 500px; display: block; margin: 0 auto; }
 .info-bubble-premium { background: white; padding: 20px; border-radius: 15px; border-left: 8px solid var(--verde); box-shadow: 10px 10px 30px rgba(0,0,0,0.05); }
 
