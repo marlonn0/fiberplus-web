@@ -60,6 +60,9 @@ p, .btn-main {
     overflow: visible; 
     z-index: 10; 
     margin-top: 0;
+    /* Ajuste de alineación */
+    position: relative;
+    top: -3px; 
 }
 
 .top-bar-logo { 
@@ -126,12 +129,39 @@ p, .btn-main {
 }
 .hero-content { max-width: 900px; padding: 0 20px; color: white; }
 
+/* --- AQUÍ ESTÁ LA CORRECCIÓN DE LA ANIMACIÓN --- */
 .typewriter { 
     font-family: 'Titillium Web', sans-serif !important; 
     font-size: 2.8rem; 
     font-weight: 900; 
-    margin-bottom: 20px;
+    margin: 0 auto 20px; /* Centrado */
+    
+    /* Propiedades para la animación */
+    display: inline-block;
+    overflow: hidden;
+    border-right: 5px solid var(--verde); /* Cursor verde */
+    white-space: nowrap;
+    letter-spacing: 2px;
+    max-width: fit-content;
+    
+    /* La magia de la animación */
+    animation: 
+        typing 3.5s steps(30, end) forwards,
+        blink-caret .75s step-end infinite;
 }
+
+/* Keyframes para el efecto de escritura */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--verde); }
+}
+/* --------------------------------------------- */
+
 .hero-subtitle { font-size: 1.4rem; margin-bottom: 40px; opacity: 0.9; font-weight: 400; }
 .btn-main { background: var(--verde); color: white; padding: 15px 40px; text-decoration: none; font-weight: 900; border-radius: 8px; font-size: 1.1rem; }
 
@@ -185,6 +215,7 @@ p, .btn-main {
 .f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
 .wa-float { position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; }
 
+/* --- RESPONSIVE --- */
 @media (max-width: 900px) {
     .header-grid { display: flex; flex-direction: column; gap: 20px; text-align: center; padding-bottom: 20px; }
     .img-500 { width: 80%; max-width: 280px; } 
@@ -192,4 +223,16 @@ p, .btn-main {
     .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
     .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
     .footer-container { grid-template-columns: 1fr; gap: 40px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .id-card { flex-direction: column; text-align: center; }
+    
+    /* Ajuste para que el typewriter no se rompa en móvil */
+    .typewriter {
+        font-size: 1.8rem;
+        white-space: normal;
+        border-right: none;
+        animation: none;
+        width: 100%;
+        display: block;
+    }
 }
