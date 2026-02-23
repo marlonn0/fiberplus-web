@@ -22,7 +22,7 @@ html, body {
     color: var(--oscuro); 
     line-height: 0.9;
     letter-spacing: 0px; 
-    font-size: 2.8rem; /* Estándar */
+    font-size: 2.8rem; 
     text-transform: uppercase;
 }
 
@@ -60,7 +60,6 @@ p, .btn-main {
     overflow: visible; 
     z-index: 10; 
     margin-top: 0;
-    /* Ajuste de alineación */
     position: relative;
     top: -3px; 
 }
@@ -74,15 +73,41 @@ p, .btn-main {
 }
 
 .top-text-center { position: absolute; left: 50%; transform: translateX(-50%); }
-.social-links-min a { color: white; margin-left: 15px; font-size: 1.1rem; }
 
-/* --- HEADER --- */
+/* --- REDES SOCIALES TOP BAR --- */
+.social-links-min { display: flex; align-items: center; }
+.social-links-min .follow-text { margin-right: 5px; }
+.social-links-min a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.social-links-min a:hover { transform: scale(1.15); }
+.top-fb { color: #1877F2 !important; } 
+.top-ig { color: #E1306C !important; } 
+.top-li { color: #0A66C2 !important; } 
+.top-tk { color: #000000 !important; } 
+
+/* --- HEADER Y GRID (CORREGIDO A DIMENSIONES ESTÁNDAR) --- */
 .master-header { background: white; padding: 10px 5% 0; border-bottom: 1px solid #e2e8f0; }
+
+/* VOLVEMOS A LA ESTRUCTURA ESTÁNDAR: 1fr 550px 1fr con gap 40px */
 .header-grid { display: grid; grid-template-columns: 1fr 550px 1fr; align-items: center; max-width: 1750px; margin: 0 auto; gap: 40px; }
-.side-l { transform: translateY(-45px); }
+
+.side-l { transform: translateY(-30px); }
+.side-r { display: flex; justify-content: center; align-items: center; }
+
 .v-accent { color: var(--verde); }
 
-/* --- ANIMACIÓN LOGO 14 AÑOS (INFINITA) --- */
 @keyframes giroInfinito {
     from { transform: perspective(1000px) rotateY(0deg); }
     to { transform: perspective(1000px) rotateY(360deg); }
@@ -91,18 +116,100 @@ p, .btn-main {
 .img-14-ani { 
     width: 240px; 
     display: block; 
-    margin-bottom: 25px; 
+    margin-bottom: 15px; 
     animation: giroInfinito 6s linear infinite; 
     transform-style: preserve-3d;
 }
 
+/* Ancho fijo estándar para el logo central */
 .img-500 { width: 500px; display: block; margin: 0 auto; }
-.info-bubble-premium { background: white; padding: 20px; border-radius: 15px; border-left: 8px solid var(--verde); box-shadow: 10px 10px 30px rgba(0,0,0,0.05); }
+
+/* --- DISEÑO: TARJETA MPC VERTICAL GIGANTE --- */
+.mpc-prominent-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 30px 25px; 
+    border-radius: 20px;
+    border-top: 8px solid var(--verde);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    text-decoration: none;
+    gap: 15px;
+    transition: all 0.3s ease;
+    width: 300px; /* ANCHO FIJO GIGANTE */
+    /* Eliminamos margin auto para que se centre en su columna con flexbox */
+}
+
+.mpc-prominent-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(76, 166, 134, 0.25);
+    border-top-color: var(--azul);
+}
+
+.mpc-card-logo {
+    flex-shrink: 0;
+    height: 140px; /* ALTURA GIGANTE */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-mpc-fluid {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    /* ZOOM AL 1.9 PARA MATAR EL ESPACIO VACÍO DEL PNG */
+    transform: scale(1.9); 
+}
+
+.mpc-card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.card-subtitle {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--oscuro);
+    line-height: 1.1;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.card-cta {
+    font-size: 1rem;
+    color: var(--verde);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.3s;
+    width: 100%;
+}
+.mpc-prominent-card:hover .card-cta {
+    gap: 15px;
+    color: var(--azul);
+}
+/* --------------------------------------------------------------- */
 
 .nav-global { margin-top: 15px; padding: 22px 0; border-top: 1px solid #f1f5f9; }
 .nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; }
 
-/* MENÚ */
 .nav-link { 
     text-decoration: none; 
     color: #0f172a; 
@@ -115,7 +222,7 @@ p, .btn-main {
 .nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); }
 .nav-cta { background: var(--verde); color: white; padding: 12px 25px; border-radius: 8px; font-weight: 900; text-decoration: none; }
 
-/* --- HERO CLÁSICO (IMAGEN FIJA) --- */
+/* --- HERO CLÁSICO --- */
 .hero-clean { 
     height: 600px; 
     width: 100%; 
@@ -129,38 +236,24 @@ p, .btn-main {
 }
 .hero-content { max-width: 900px; padding: 0 20px; color: white; }
 
-/* --- AQUÍ ESTÁ LA CORRECCIÓN DE LA ANIMACIÓN --- */
 .typewriter { 
     font-family: 'Titillium Web', sans-serif !important; 
     font-size: 2.8rem; 
     font-weight: 900; 
-    margin: 0 auto 20px; /* Centrado */
-    
-    /* Propiedades para la animación */
+    margin: 0 auto 20px; 
     display: inline-block;
     overflow: hidden;
-    border-right: 5px solid var(--verde); /* Cursor verde */
+    border-right: 5px solid var(--verde); 
     white-space: nowrap;
     letter-spacing: 2px;
     max-width: fit-content;
-    
-    /* La magia de la animación */
     animation: 
         typing 3.5s steps(30, end) forwards,
         blink-caret .75s step-end infinite;
 }
 
-/* Keyframes para el efecto de escritura */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: var(--verde); }
-}
-/* --------------------------------------------- */
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--verde); } }
 
 .hero-subtitle { font-size: 1.4rem; margin-bottom: 40px; opacity: 0.9; font-weight: 400; }
 .btn-main { background: var(--verde); color: white; padding: 15px 40px; text-decoration: none; font-weight: 900; border-radius: 8px; font-size: 1.1rem; }
@@ -196,19 +289,55 @@ p, .btn-main {
 .ally-info h4 { font-weight: 900; color: var(--oscuro); font-size: 1.1rem; margin-bottom: 5px; text-transform: uppercase; }
 .ally-info p { font-size: 0.85rem; color: #64748b; font-weight: 600; }
 
-/* --- FOOTER --- */
+/* --- FOOTER Y REDES SOCIALES INFERIORES --- */
 .footer-master { background: var(--blanco); border-top: 1px solid #e2e8f0; position: relative; padding-top: 80px; }
 .f-top-accent { height: 12px; background: var(--verde); width: 100%; position: absolute; top: 0; left: 0; }
 .footer-container { max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; padding: 0 5% 100px; align-items: flex-start; }
 .f-col-brand { display: flex; flex-direction: column; justify-content: flex-start; }
 .f-logo-footer { width: 320px; margin-bottom: 20px; }
-.social-clean-row { display: flex; gap: 15px; }
-.soc-icon { width: 45px; height: 45px; background: var(--oscuro); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; }
-.soc-icon:hover { background: var(--verde); transform: translateY(-3px); }
+.brand-desc { color: #64748b; margin-bottom: 25px; font-size: 0.95rem; max-width: 80%; }
+
+/* --- ESPACIO Y COLORES DEL FOOTER EXACTOS A LA PÁGINA "NOSOTROS" --- */
+.social-clean-row { 
+    display: flex; 
+    gap: 25px; 
+    align-items: center; 
+}
+.soc-icon { 
+    width: 45px !important; 
+    height: 45px !important; 
+    min-width: 45px !important;  
+    min-height: 45px !important; 
+    color: white !important; 
+    border-radius: 50% !important; 
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center !important; 
+    text-decoration: none !important; 
+    font-size: 1.2rem !important; 
+    transition: 0.3s; 
+    flex-shrink: 0 !important; 
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+/* COLORES DE MARCA FIJADOS */
+.soc-icon.fb { background: #1877F2 !important; } 
+.soc-icon.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important; } 
+.soc-icon.li { background: #0A66C2 !important; } 
+.soc-icon.tk { background: #000000 !important; } 
+.soc-icon:hover { transform: translateY(-5px); filter: brightness(1.15); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+/* -------------------------------------------------------- */
+
+.f-col-uniform { display: flex; flex-direction: column; }
 .footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; height: auto; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
 .highlight-card { border-top: 6px solid var(--azul); text-align: center; }
+.f-header { color: var(--verde); font-weight: 900; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
 .contact-list li { display: flex; align-items: center; margin-bottom: 10px; color: #334155; font-weight: 600; }
 .contact-list li i { color: var(--azul); width: 25px; font-size: 1.1rem; }
+.divider-mini { border-top: 1px solid #cbd5e1; margin: 15px 0; }
+.loc-title { font-weight: 900; color: var(--oscuro); font-size: 0.95rem; margin-bottom: 5px; }
+.loc-text { font-size: 0.85rem; color: #64748b; line-height: 1.4; margin-bottom: 15px; }
+.sgs-badge { margin-bottom: 10px; }
 .big-percent { font-size: 3rem; font-weight: 900; color: var(--azul); display: block; line-height: 1; font-family: 'Titillium Web', sans-serif;}
 .sgs-label { font-size: 0.8rem; letter-spacing: 1px; color: #64748b; font-weight: 800; }
 .sgs-note { font-weight: 700; color: var(--oscuro); }
@@ -219,6 +348,12 @@ p, .btn-main {
 @media (max-width: 900px) {
     .header-grid { display: flex; flex-direction: column; gap: 20px; text-align: center; padding-bottom: 20px; }
     .img-500 { width: 80%; max-width: 280px; } 
+    
+    /* Ajuste para la tarjeta en móviles */
+    .side-r { width: 100%; }
+    .mpc-prominent-card { width: 100%; justify-content: center; padding: 20px; max-width: 90%; flex-direction: column; text-align: center; }
+    .mpc-card-text { align-items: center; text-align: center; }
+
     .nav-list { flex-direction: column; gap: 0; padding: 0; }
     .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
     .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
@@ -226,7 +361,6 @@ p, .btn-main {
     .services-grid { grid-template-columns: 1fr; }
     .id-card { flex-direction: column; text-align: center; }
     
-    /* Ajuste para que el typewriter no se rompa en móvil */
     .typewriter {
         font-size: 1.8rem;
         white-space: normal;

@@ -19,7 +19,6 @@ html, body {
 .top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
 .social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; height: 100%; }
 
-/* --- CORRECCIÓN DE LOGO APLICADA --- */
 .top-logo-container { 
     background-color: transparent; 
     height: 40px; 
@@ -37,10 +36,31 @@ html, body {
     transform: scale(3.5); 
     filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3)); 
 }
-/* ------------------------------------- */
 
 .top-text-center { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-.social-links-min a { color: white; margin-left: 15px; text-decoration: none; font-size: 1.1rem; }
+
+/* --- REDES SOCIALES TOP BAR (BLANCAS PARA RESALTAR) --- */
+.social-links-min { display: flex; align-items: center; }
+.social-links-min .follow-text { margin-right: 5px; }
+.social-links-min a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.social-links-min a:hover { transform: scale(1.15); }
+.top-fb { color: #1877F2 !important; }
+.top-ig { color: #E1306C !important; }
+.top-li { color: #0A66C2 !important; }
+.top-tk { color: #000000 !important; }
 
 .master-header { background: white; padding: 10px 5% 0; border-bottom: 1px solid #e2e8f0; }
 .header-grid { display: grid; grid-template-columns: 1fr 550px 1fr; align-items: center; max-width: 1750px; margin: 0 auto; gap: 40px; }
@@ -74,9 +94,9 @@ html, body {
 .nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); padding-bottom: 5px; }
 .nav-cta { background: var(--verde); color: white !important; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 900; }
 
-/* --- HERO SOPORTE (IMAGEN BRILLANTE Y CLARA) --- */
+/* --- HERO SOPORTE --- */
 .support-hero {
-    height: 550px; /* AJUSTADO A 550PX */
+    height: 550px; 
     width: 100%;
     background-color: #201751;
     background: linear-gradient(rgba(32, 23, 81, 0.6), rgba(32, 23, 81, 0.6)), 
@@ -169,16 +189,40 @@ html, body {
 .esc-contact { color: var(--verde); font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 1.05rem; background: white; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0; transition: 0.3s; }
 .esc-contact:hover { border-color: var(--verde); color: var(--oscuro); }
 
-/* --- FOOTER (Estándar) --- */
+/* --- FOOTER --- */
 .footer-master { background: var(--blanco); border-top: 1px solid #e2e8f0; position: relative; padding-top: 80px; }
 .f-top-accent { height: 12px; background: var(--verde); width: 100%; position: absolute; top: 0; left: 0; }
 .footer-container { max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; padding: 0 5% 100px; align-items: flex-start; }
 .f-col-brand { display: flex; flex-direction: column; justify-content: flex-start; }
 .f-logo-footer { width: 320px; margin-bottom: 20px; }
 .brand-desc { color: #64748b; margin-bottom: 25px; font-size: 0.95rem; max-width: 80%; }
-.social-clean-row { display: flex; gap: 15px; }
-.soc-icon { width: 45px; height: 45px; background: var(--oscuro); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; transition: 0.3s; }
-.soc-icon:hover { background: var(--verde); transform: translateY(-3px); }
+
+/* --- REDES SOCIALES DEL FOOTER BLINDADAS (!IMPORTANT) --- */
+.social-clean-row { display: flex; gap: 15px; align-items: center; }
+.soc-icon { 
+    width: 45px !important; 
+    height: 45px !important; 
+    min-width: 45px !important;  
+    min-height: 45px !important; 
+    color: white !important; 
+    border-radius: 50% !important; 
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center !important; 
+    text-decoration: none !important; 
+    font-size: 1.2rem !important; 
+    transition: 0.3s; 
+    flex-shrink: 0 !important; 
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+.soc-icon.fb { background: #1877F2 !important; }
+.soc-icon.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important; }
+.soc-icon.li { background: #0A66C2 !important; }
+.soc-icon.tk { background: #000000 !important; }
+.soc-icon:hover { transform: translateY(-5px); filter: brightness(1.15); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+/* -------------------------------------------------------- */
+
 .f-col-uniform { display: flex; flex-direction: column; }
 .footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; height: auto; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
 .highlight-card { border-top: 6px solid var(--azul); text-align: center; }

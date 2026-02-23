@@ -14,6 +14,26 @@ html, body {
     width: 100%; max-width: 100%; overflow-x: hidden; position: relative;
 }
 
+/* --- ESTILOS DE TEXTO --- */
+.main-title {
+    font-family: 'Titillium Web', sans-serif !important;
+    font-weight: 900; 
+    color: var(--oscuro); 
+    line-height: 0.9;
+    font-size: 2.8rem; 
+    text-transform: uppercase;
+}
+
+h2, h3, h4, .section-title, .f-header {
+    font-family: 'Titillium Web', sans-serif !important;
+    font-weight: 900; 
+    text-transform: uppercase;
+}
+
+p, .btn-main, .btn-card, .btn-cta-big {
+    font-family: 'Titillium Web', sans-serif;
+}
+
 /* --- 2. HEADER Y NAVEGACIÓN --- */
 .top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
 .social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; height: 100%; }
@@ -27,6 +47,8 @@ html, body {
     overflow: visible; 
     box-shadow: none; 
     z-index: 10; 
+    position: relative;
+    top: -3px;
 }
 
 .top-bar-logo { 
@@ -39,15 +61,36 @@ html, body {
 /* -------------------- */
 
 .top-text-center { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-.social-links-min a { color: white; margin-left: 15px; text-decoration: none; font-size: 1.1rem; }
+
+/* --- REDES SOCIALES TOP BAR (BLANCAS PARA RESALTAR) --- */
+.social-links-min { display: flex; align-items: center; }
+.social-links-min .follow-text { margin-right: 5px; }
+.social-links-min a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.social-links-min a:hover { transform: scale(1.15); }
+.top-fb { color: #1877F2 !important; }
+.top-ig { color: #E1306C !important; }
+.top-li { color: #0A66C2 !important; }
+.top-tk { color: #000000 !important; }
 
 .master-header { background: white; padding: 10px 5% 0; border-bottom: 1px solid #e2e8f0; }
 .header-grid { display: grid; grid-template-columns: 1fr 550px 1fr; align-items: center; max-width: 1750px; margin: 0 auto; gap: 40px; }
 .side-l { transform: translateY(-45px); margin-top: 0; }
-.main-title { font-size: 2.8rem; font-weight: 900; color: var(--oscuro); line-height: 0.85; margin-top: 0; }
 .v-accent { color: var(--verde); }
 
-/* --- AQUÍ ESTÁ EL CAMBIO DEL LOGO GIRATORIO --- */
+/* --- ANIMACIÓN LOGO 14 AÑOS --- */
 @keyframes giroInfinito {
     from { transform: perspective(1000px) rotateY(0deg); }
     to { transform: perspective(1000px) rotateY(360deg); }
@@ -59,12 +102,9 @@ html, body {
     display: block; 
     margin-bottom: 25px; 
     margin-top: 0;
-    
-    /* Animación agregada: */
     animation: giroInfinito 6s linear infinite; 
     transform-style: preserve-3d;
 }
-/* ----------------------------------------------- */
 
 .img-500 { width: 500px; display: block; margin: 0 auto; }
 .info-bubble-premium { background: white; padding: 20px; border-radius: 15px; border-left: 8px solid var(--verde); box-shadow: 10px 10px 30px rgba(0,0,0,0.05); }
@@ -75,11 +115,10 @@ html, body {
 .nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); padding-bottom: 5px; }
 .nav-cta { background: var(--verde); color: white !important; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 900; }
 
-/* --- 3. BANNER HERO (TU IMAGEN ORIGINAL CONSERVADA) --- */
+/* --- 3. BANNER HERO --- */
 .negocios-hero {
     height: 550px;
     width: 100%;
-    /* Tu imagen de data center se mantiene intacta */
     background: linear-gradient(rgba(32, 23, 81, 0.85), rgba(32, 23, 81, 0.85)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070');
     background-size: cover;
     background-position: center;
@@ -92,7 +131,6 @@ html, body {
 
 .hero-content { position: relative; z-index: 5; color: white; max-width: 1200px; padding: 0 15px; width: 100%; }
 
-/* Animación Texto */
 .typewriter {
     font-size: 3.5rem;
     font-weight: 900;
@@ -111,7 +149,7 @@ html, body {
 @keyframes typing { from { width: 0 } to { width: 100% } }
 @keyframes blink { 50% { border-color: transparent } }
 
-/* --- 4. CONTENIDO (Ingeniería y Servicios) --- */
+/* --- 4. CONTENIDO --- */
 .intro-biz { padding: 80px 15%; text-align: center; background: white; }
 .intro-biz h2 { color: var(--oscuro); font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; }
 .intro-biz p { color: #64748b; font-size: 1.2rem; line-height: 1.6; max-width: 900px; margin: 0 auto; }
@@ -153,9 +191,8 @@ html, body {
 }
 .btn-card:hover { background: var(--verde); }
 
-/* --- 5. CTA FINAL (TU IMAGEN ORIGINAL CONSERVADA) --- */
+/* --- 5. CTA FINAL --- */
 .cta-final { 
-    /* Tu imagen de planos técnicos se mantiene intacta */
     background: linear-gradient(rgba(32, 23, 81, 0.9), rgba(32, 23, 81, 0.9)), url('https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070');
     background-size: cover; 
     background-attachment: fixed;
@@ -178,9 +215,32 @@ html, body {
 .footer-container { max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; padding: 0 5% 100px; align-items: flex-start; }
 .f-logo-footer { width: 320px; margin-bottom: 20px; }
 .brand-desc { color: #64748b; margin-bottom: 25px; font-size: 0.95rem; max-width: 80%; }
-.social-clean-row { display: flex; gap: 15px; }
-.soc-icon { width: 45px; height: 45px; background: var(--oscuro); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; transition: 0.3s; }
-.soc-icon:hover { background: var(--verde); transform: translateY(-3px); }
+
+/* REDES SOCIALES DEL FOOTER BLINDADAS (!IMPORTANT) */
+.social-clean-row { display: flex; gap: 15px; align-items: center; }
+.soc-icon { 
+    width: 45px !important; 
+    height: 45px !important; 
+    min-width: 45px !important;  
+    min-height: 45px !important; 
+    color: white !important; 
+    border-radius: 50% !important; 
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center !important; 
+    text-decoration: none !important; 
+    font-size: 1.2rem !important; 
+    transition: 0.3s; 
+    flex-shrink: 0 !important; 
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+.soc-icon.fb { background: #1877F2 !important; }
+.soc-icon.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important; }
+.soc-icon.li { background: #0A66C2 !important; }
+.soc-icon.tk { background: #000000 !important; }
+.soc-icon:hover { transform: translateY(-5px); filter: brightness(1.15); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
 .footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; height: auto; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
 .highlight-card { border-top: 6px solid var(--azul); text-align: center; }
 .f-header { color: var(--verde); font-weight: 900; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
