@@ -5,55 +5,32 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --verde: #4ca686; 
-    --verde-claro: #2ebd59; 
-    --azul: #385dae; 
-    --oscuro: #201751;
-    --negro-tarjeta: #000000; 
-    --gris-fondo: #f8fafc; 
-    --blanco: #ffffff;
+    --verde: #4ca686; --azul: #385dae; --oscuro: #201751;
+    --negro-tarjeta: #000000; --gris-fondo: #f8fafc; --blanco: #ffffff;
+    --verde-claro: #2ebd59;
 }
 
-html, body { 
-    font-family: 'Titillium Web', sans-serif; 
-    background-color: var(--blanco); 
-    width: 100%; max-width: 100%; overflow-x: hidden; 
-}
+html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--blanco); width: 100%; max-width: 100%; overflow-x: hidden; }
 
-/* --- ESTILOS DE TEXTO --- */
-.main-title {
-    font-family: 'Titillium Web', sans-serif !important;
-    font-weight: 900; color: var(--oscuro); line-height: 0.9;
-    letter-spacing: 0px; font-size: 2.8rem; text-transform: uppercase;
-}
-h2, h3, h4, .section-title, .f-header, .ally-info h4 {
-    font-family: 'Titillium Web', sans-serif !important;
-    font-weight: 900; letter-spacing: 0px; text-transform: uppercase;
-}
-p, .btn-main { font-family: 'Titillium Web', sans-serif; font-weight: 400; }
-
-/* --- TOP BAR --- */
+/* --- HEADER & HERO --- */
 .top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
 .social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; }
-.top-logo-container { height: 40px; width: 110px; display: flex; align-items: center; justify-content: center; z-index: 10; position: relative; top: -3px; }
+.top-logo-container { height: 40px; width: 110px; display: flex; align-items: center; justify-content: center; position: relative; top: -3px; z-index: 10; }
 .top-bar-logo { height: 100%; width: 100%; object-fit: contain; transform: scale(3.5); filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3)); }
 .top-text-center { position: absolute; left: 50%; transform: translateX(-50%); }
 .social-links-min a { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: white; border-radius: 50%; margin-left: 10px; text-decoration: none; font-size: 0.95rem; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 .top-fb { color: #1877F2 !important; } .top-ig { color: #E1306C !important; } .top-li { color: #0A66C2 !important; } .top-tk { color: #000000 !important; } 
 
-/* --- HEADER --- */
 .master-header { background: white; padding: 10px 5% 0; border-bottom: 1px solid #e2e8f0; }
 .header-grid { display: grid; grid-template-columns: 1fr 550px 1fr; align-items: center; max-width: 1750px; margin: 0 auto; gap: 40px; }
 .side-l { transform: translateY(-30px); }
-.side-r { display: flex; justify-content: center; align-items: center; }
+.main-title { font-family: 'Titillium Web', sans-serif !important; font-weight: 900; color: var(--oscuro); line-height: 0.9; letter-spacing: 0px; font-size: 2.8rem; text-transform: uppercase; }
 .v-accent { color: var(--verde); }
 @keyframes giroInfinito { from { transform: perspective(1000px) rotateY(0deg); } to { transform: perspective(1000px) rotateY(360deg); } }
 .img-14-ani { width: 240px; display: block; margin-bottom: 15px; animation: giroInfinito 6s linear infinite; transform-style: preserve-3d; }
 .img-500 { width: 500px; display: block; margin: 0 auto; }
 
-/* TARJETA MPC */
 .mpc-prominent-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--negro-tarjeta); padding: 30px 25px; border-radius: 20px; border-top: 8px solid var(--verde-claro); box-shadow: 0 20px 50px rgba(0,0,0,0.3); text-decoration: none; gap: 15px; transition: all 0.3s ease; width: 320px; }
-.mpc-prominent-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5); border-top-color: #ffffff; }
 .mpc-card-logo { flex-shrink: 0; height: 120px; width: 100%; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 12px; padding: 8px; margin-bottom: 5px; overflow: hidden; }
 .img-mpc-fluid { height: 100%; width: auto; object-fit: contain; transform: scale(1.4); }
 .mpc-card-text { display: flex; flex-direction: column; align-items: center; width: 100%; }
@@ -62,34 +39,22 @@ p, .btn-main { font-family: 'Titillium Web', sans-serif; font-weight: 400; }
 .card-button { background: var(--verde-claro); color: #000000; padding: 12px 25px; border-radius: 50px; font-size: 0.9rem; font-weight: 900; letter-spacing: 1px; transition: 0.3s; width: 100%; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 5px 15px rgba(46, 189, 89, 0.4); }
 .mpc-prominent-card:hover .card-button { background: #ffffff; color: #000000; transform: scale(1.05); }
 
-/* NAV GLOBAL */
 .nav-global { margin-top: 15px; padding: 22px 0; border-top: 1px solid #f1f5f9; }
 .nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; }
 .nav-link { text-decoration: none; color: #0f172a; font-family: 'Titillium Web', sans-serif; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; }
 .nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); }
 .nav-cta { background: var(--verde); color: white; padding: 12px 25px; border-radius: 8px; font-weight: 900; text-decoration: none; }
 
-/* --- HERO CON FOTO REAL --- */
-.hero-clean { 
-    height: 600px; width: 100%; position: relative;
-    background: url('../assets/img/portada-inicio.jpg') no-repeat center center/cover;
-    display: flex; align-items: center; justify-content: center; text-align: center; 
-}
+.hero-clean { height: 600px; width: 100%; position: relative; background: url('../assets/img/portada-inicio.jpg') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
 .hero-overlay-dark { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(32, 23, 81, 0.3); z-index: 1; }
 .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 20px; color: white; }
-
-.typewriter { 
-    font-family: 'Titillium Web', sans-serif !important; font-size: 2.8rem; font-weight: 900; margin: 0 auto 20px; 
-    display: inline-block; overflow: hidden; border-right: 5px solid var(--verde); 
-    white-space: nowrap; letter-spacing: 2px; max-width: fit-content;
-    animation: typing 3.5s steps(30, end) forwards, blink-caret .75s step-end infinite;
-}
+.typewriter { font-family: 'Titillium Web', sans-serif !important; font-size: 2.8rem; font-weight: 900; margin: 0 auto 20px; display: inline-block; overflow: hidden; border-right: 5px solid var(--verde); white-space: nowrap; letter-spacing: 2px; max-width: fit-content; animation: typing 3.5s steps(30, end) forwards, blink-caret .75s step-end infinite; }
 @keyframes typing { from { width: 0 } to { width: 100% } }
 @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--verde); } }
 .hero-subtitle { font-size: 1.4rem; margin-bottom: 40px; opacity: 0.9; font-weight: 400; text-shadow: 0 2px 4px rgba(0,0,0,0.6); }
 .btn-main { background: var(--verde); color: white; padding: 15px 40px; text-decoration: none; font-weight: 900; border-radius: 8px; font-size: 1.1rem; }
 
-/* --- SERVICIOS (TARJETAS ELEGANTES) --- */
+/* --- SERVICIOS: Ajuste de contenedor al 5% (Más ancho, como querías) --- */
 .services-preview { padding: 80px 5%; background: var(--gris-fondo); }
 .services-header { text-align: center; margin-bottom: 60px; }
 .services-header h2 { font-size: 2.5rem; color: var(--oscuro); font-weight: 900; }
@@ -111,18 +76,13 @@ p, .btn-main { font-family: 'Titillium Web', sans-serif; font-weight: 400; }
 .clean-card-body p { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
 .link-arrow { color: var(--verde); font-weight: 900; text-transform: uppercase; font-size: 0.85rem; }
 
-/* --- BANNER IDENTIDAD (REEMPLAZA LA SECCIÓN DE LA CASA SOLA) --- */
-.identity-banner { 
-    position: relative; padding: 120px 5%; 
-    background: url('../assets/img/bg-mapa.jpg') no-repeat center center/cover;
-    background-attachment: fixed; text-align: center; color: white; 
-}
+/* --- IDENTIDAD & ALIADOS (5%) --- */
+.identity-banner { position: relative; padding: 120px 5%; background: url('../assets/img/bg-mapa.jpg') no-repeat center center/cover; background-attachment: fixed; text-align: center; color: white; }
 .identity-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(32, 23, 81, 0.7); }
 .identity-content-centered { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
 .big-icon { font-size: 4rem; color: var(--verde); margin-bottom: 20px; }
 .identity-content-centered h2 { font-size: 2.5rem; margin-bottom: 20px; }
 
-/* --- ALIADOS --- */
 .allies-section { padding: 80px 5%; text-align: center; background: white; }
 .section-title { font-size: 2.2rem; color: var(--oscuro); font-weight: 900; margin-bottom: 50px; }
 .allies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; justify-content: center; }
@@ -131,38 +91,37 @@ p, .btn-main { font-family: 'Titillium Web', sans-serif; font-weight: 400; }
 .client-logo-img { height: 90px; width: auto; max-width: 100%; object-fit: contain; margin-bottom: 25px; }
 .mpc-logo-special { height: 140px !important; max-height: 140px; }
 .ally-info h4 { font-weight: 900; color: var(--oscuro); font-size: 1.1rem; margin-bottom: 5px; text-transform: uppercase; }
+.ally-info p { font-size: 0.85rem; color: #64748b; font-weight: 600; }
 
-/* --- FOOTER --- */
+/* --- FOOTER LIMPIO --- */
 .footer-master { background: var(--blanco); border-top: 1px solid #e2e8f0; position: relative; padding-top: 80px; }
 .f-top-accent { height: 12px; background: var(--verde); width: 100%; position: absolute; top: 0; left: 0; }
 .footer-container { max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; padding: 0 5% 100px; align-items: flex-start; }
 .f-col-brand { display: flex; flex-direction: column; justify-content: flex-start; }
 .f-logo-footer { width: 320px; margin-bottom: 20px; }
-.brand-desc { color: #64748b; margin-bottom: 25px; font-size: 0.95rem; max-width: 80%; }
+.brand-desc { color: #64748b; margin-bottom: 25px; font-size: 0.95rem; max-width: 80%; font-weight: 600; }
 
-.social-clean-row { display: flex; gap: 25px; align-items: center; }
+.social-clean-row { display: flex; gap: 15px; }
 .soc-icon { width: 45px; height: 45px; color: white !important; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; transition: 0.3s; }
-.soc-icon.fb { background: #1877F2; } 
-.soc-icon.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); } 
-.soc-icon.li { background: #0A66C2; } 
-.soc-icon.tk { background: #000000; } 
+.soc-icon.fb { background: #1877F2; } .soc-icon.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); } .soc-icon.li { background: #0A66C2; } .soc-icon.tk { background: #000000; } 
 .soc-icon:hover { transform: translateY(-5px); filter: brightness(1.15); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
 .f-col-uniform { display: flex; flex-direction: column; }
-.footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+.footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid #d1d5db; }
 .highlight-card { border-top: 6px solid var(--azul); text-align: center; }
 .f-header { color: var(--verde); font-weight: 900; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
-.contact-list li { display: flex; align-items: center; margin-bottom: 10px; color: #334155; font-weight: 600; }
+.contact-list li { display: flex; align-items: center; margin-bottom: 10px; color: #334155; font-weight: 600; gap: 10px; }
 .contact-list li i { color: var(--azul); width: 25px; font-size: 1.1rem; }
 .divider-mini { border-top: 1px solid #cbd5e1; margin: 15px 0; }
 .loc-title { font-weight: 900; color: var(--oscuro); font-size: 0.95rem; margin-bottom: 5px; }
 .loc-text { font-size: 0.85rem; color: #64748b; line-height: 1.4; margin-bottom: 15px; }
+.sgs-badge { margin-bottom: 10px; }
 .big-percent { font-size: 3rem; font-weight: 900; color: var(--azul); display: block; line-height: 1; }
 .sgs-label { font-size: 0.8rem; letter-spacing: 1px; color: #64748b; font-weight: 800; }
+.sgs-note { font-weight: 700; color: var(--oscuro); }
 .f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
 .wa-float { position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 900px) {
     .header-grid { display: flex; flex-direction: column; gap: 20px; text-align: center; padding-bottom: 20px; }
     .img-500 { width: 80%; max-width: 280px; } 
@@ -172,7 +131,7 @@ p, .btn-main { font-family: 'Titillium Web', sans-serif; font-weight: 400; }
     .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
     .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
     .footer-container { grid-template-columns: 1fr; gap: 40px; }
-    .services-grid { grid-template-columns: 1fr; }
+    .services-grid-clean { grid-template-columns: 1fr; }
     .id-card { flex-direction: column; text-align: center; }
     .typewriter { font-size: 1.8rem; white-space: normal; border-right: none; animation: none; width: 100%; display: block; }
 }
