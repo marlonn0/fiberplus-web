@@ -6,8 +6,47 @@
     <title>Seguridad Industrial | Fiberplus Cía. Ltda.</title>
     
     <link rel="stylesheet" href="../css/seguridad.css">
+    <link rel="stylesheet" href="../css/style.css"> 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(46, 189, 89, 0.15);
+            color: #2ebd59;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            border: 1px solid rgba(46, 189, 89, 0.3);
+        }
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #2ebd59;
+            border-radius: 50%;
+            animation: pulse-green 1.5s infinite;
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(46, 189, 89, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(46, 189, 89, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(46, 189, 89, 0); }
+        }
+        .s-date {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.95rem;
+            color: #94a3b8;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+    </style>
 </head>
 <body class="zero-gap-layout">
 
@@ -96,18 +135,22 @@
             </div>
         </section>
 
-        <section class="safety-stats">
+        <section class="safety-stats" id="stats-section">
             <h2>NUESTRO RÉCORD DE SEGURIDAD</h2>
             <div class="stats-flex">
                 <div class="s-stat">
-                    <span class="s-number">1.200</span>
+                    <div class="live-indicator"><span class="pulse-dot"></span> EN VIVO</div>
+                    
+                    <span class="s-number" id="dias-seguros">0</span>
                     <span class="s-label">DÍAS SIN ACCIDENTES</span>
+                    
+                    <span class="s-date" id="fecha-actual"></span>
                 </div>
-                <div class="s-stat">
+                <div class="s-stat" style="display: flex; flex-direction: column; justify-content: center;">
                     <span class="s-number">100%</span>
                     <span class="s-label">PERSONAL CAPACITADO</span>
                 </div>
-                <div class="s-stat">
+                <div class="s-stat" style="display: flex; flex-direction: column; justify-content: center;">
                     <span class="s-number">ISO</span>
                     <span class="s-label">PROCESOS NORMATIVOS</span>
                 </div>
@@ -224,5 +267,61 @@
         </div>
     </footer>
     <a href="https://wa.me/593987626160?text=Hola%20Fiberplus,%20quisiera%20m%C3%A1s%20informaci%C3%B3n" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        // 1. Establecer la fecha de inicio
+        const fechaInicio = new Date(2022, 11, 1); 
+
+        // 2. Función para calcular los días
+        function calcularDias() {
+            const hoy = new Date();
+            const diferenciaTiempo = hoy.getTime() - fechaInicio.getTime();
+            return Math.floor(diferenciaTiempo / (1000 * 3600 * 24));
+        }
+
+        // 3. Escribir la fecha actual en pantalla
+        function mostrarFechaActual() {
+            const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
+            const fechaHoyTexto = new Date().toLocaleDateString('es-ES', opcionesFecha);
+            document.getElementById('fecha-actual').innerText = "Actualizado al: " + fechaHoyTexto;
+        }
+
+        // 4. Animar el contador
+        function animarContador(elemento, objetivo, duracion) {
+            let inicio = 0;
+            const incremento = objetivo / (duracion / 16); 
+            
+            const timer = setInterval(() => {
+                inicio += incremento;
+                if (inicio >= objetivo) {
+                    elemento.innerText = objetivo.toLocaleString('es-ES'); 
+                    clearInterval(timer);
+                } else {
+                    elemento.innerText = Math.floor(inicio).toLocaleString('es-ES');
+                }
+            }, 16);
+        }
+
+        // 5. Iniciar todo
+        document.addEventListener('DOMContentLoaded', () => {
+            mostrarFechaActual(); // Imprime la fecha de hoy
+            const diasSegurosObj = calcularDias();
+            const contadorElemento = document.getElementById('dias-seguros');
+            const statsSection = document.getElementById('stats-section');
+            let animado = false;
+
+            window.addEventListener('scroll', () => {
+                if(animado) return;
+                
+                const sectionPos = statsSection.getBoundingClientRect().top;
+                const screenPos = window.innerHeight;
+
+                if(sectionPos < screenPos) {
+                    animarContador(contadorElemento, diasSegurosObj, 2000);
+                    animado = true;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
