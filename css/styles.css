@@ -37,26 +37,26 @@ html, body {
     height: 100%; 
 }
 
-/* CONTENEDOR DEL LOGO (Corrección: Transparente y sin sombra) */
+/* CONTENEDOR DEL LOGO */
 .top-logo-container { 
-    background-color: transparent; /* Fondo transparente */
+    background-color: transparent; 
     height: 48px; 
     width: 80px; 
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    overflow: visible; /* Permite que el logo crezca sin cortarse */
-    box-shadow: none; /* Sin sombra */
+    overflow: visible; 
+    box-shadow: none; 
     z-index: 10; 
 }
 
-/* IMAGEN DEL LOGO (Corrección: Aumentada la escala) */
+/* IMAGEN DEL LOGO */
 .top-bar-logo { 
     height: 85%; 
     width: auto; 
     object-fit: contain; 
-    transform: scale(2.0); /* Lupa para agrandar el logo vertical */
-    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2)); /* Sombra sutil directo a las letras */
+    transform: scale(2.0); 
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2)); 
 }
 
 .top-text-center { 
@@ -93,7 +93,6 @@ html, body {
 .hero-section {
     height: 600px;
     width: 100%;
-    /* Fondo de ingeniería / tecnología */
     background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070') center/cover no-repeat;
     position: relative;
     display: flex;
@@ -101,7 +100,7 @@ html, body {
     justify-content: center;
 }
 .hero-overlay {
-    background: rgba(32, 23, 81, 0.75); /* Filtro azul oscuro */
+    background: rgba(32, 23, 81, 0.75);
     width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
     text-align: center;
@@ -172,14 +171,50 @@ html, body {
 .f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
 .wa-float { position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; }
 
-/* Responsive */
+
+/* =========================================
+   REGLAS GLOBALES PARA CELULARES (APLICA A TODAS LAS PÁGINAS)
+   ========================================= */
 @media (max-width: 900px) {
-    .header-grid { display: flex; flex-direction: column; gap: 20px; text-align: center; padding-bottom: 20px; }
-    .img-500 { width: 80%; max-width: 280px; } 
+    
+    /* 1. Barra Superior (Limpieza) */
+    .top-brand-strip { height: auto; padding: 10px 0; }
+    .social-top-bar { justify-content: center; flex-direction: column; gap: 10px; text-align: center; }
+    .top-logo-container { display: none; } /* Ocultamos el logo pequeño */
+    .top-text-center { display: none; position: static; transform: none; } 
+    .social-links-min span { display: none; } /* Oculta la palabra "SÍGUENOS" para ahorrar espacio */
+    
+    /* 2. Header (Orden Lógico: Logo -> Título -> Tarjeta MPC) */
+    .header-grid { display: flex; flex-direction: column; gap: 30px; text-align: center; padding-bottom: 20px; }
+    .logo-c { order: 1; } 
+    .side-l { order: 2; transform: none; display: flex; flex-direction: column; align-items: center; margin-top: 0;} 
+    .side-r { order: 3; width: 100%; }
+
+    /* Tamaños de imagen ajustados al celular */
+    .img-500 { width: 85%; max-width: 250px; } 
+    .img-14-ani { width: 180px; margin-bottom: 10px; }
+    .main-title { font-size: 2.2rem; line-height: 1.1; margin-top: 15px; }
+
+    /* Tarjeta de MPC (Si la llegaras a usar en otras páginas) */
+    .mpc-prominent-card { width: 90%; max-width: 320px; padding: 20px; margin: 0 auto; }
+    
+    /* 3. Menú de Navegación */
     .nav-list { flex-direction: column; gap: 0; padding: 0; }
     .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
     .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
-    .cards-grid, .footer-container, .about-container { grid-template-columns: 1fr; gap: 40px; }
-    .top-text-center { display: none; } /* Ocultar texto centro en móvil para que quepa el logo */
+
+    /* 4. Arreglos Generales para evitar desbordes en otras páginas */
+    .cards-grid, .about-container { grid-template-columns: 1fr; gap: 40px; }
     .hero-title { font-size: 2rem; }
+    
+    /* 5. Footer Global */
+    .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .f-col-brand { align-items: center; }
+    .f-logo-footer { width: 250px; margin: 0 auto 20px auto; }
+    .brand-desc { margin: 0 auto 20px auto; }
+    .social-clean-row { justify-content: center; }
+    .contact-list li { justify-content: center; }
+
+    /* 6. Botón WhatsApp (Tamaño razonable) */
+    .wa-float { width: 60px; height: 60px; font-size: 35px; bottom: 20px; right: 20px; }
 }

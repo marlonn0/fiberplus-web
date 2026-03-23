@@ -1,4 +1,8 @@
-/* --- 1. FUENTES --- */
+/* =========================================
+   ESTILOS PRINCIPALES - FIBERPLUS
+   Archivo: css/inicio.css
+   ========================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
 
 /* --- BASES --- */
@@ -10,7 +14,13 @@
     --verde-claro: #2ebd59;
 }
 
-html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--blanco); width: 100%; max-width: 100%; overflow-x: hidden; }
+html, body { 
+    font-family: 'Titillium Web', sans-serif; 
+    background-color: var(--blanco); 
+    width: 100%; 
+    max-width: 100%; 
+    overflow-x: hidden; 
+}
 
 /* --- HEADER & HERO --- */
 .top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
@@ -18,6 +28,7 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
 .top-logo-container { height: 40px; width: 110px; display: flex; align-items: center; justify-content: center; position: relative; top: -3px; z-index: 10; }
 .top-bar-logo { height: 100%; width: 100%; object-fit: contain; transform: scale(3.5); filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3)); }
 .top-text-center { position: absolute; left: 50%; transform: translateX(-50%); }
+.social-links-min { display: flex; align-items: center;}
 .social-links-min a { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: white; border-radius: 50%; margin-left: 10px; text-decoration: none; font-size: 0.95rem; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 .top-fb { color: #1877F2 !important; } .top-ig { color: #E1306C !important; } .top-li { color: #0A66C2 !important; } .top-tk { color: #000000 !important; } 
 
@@ -54,7 +65,7 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
 .hero-subtitle { font-size: 1.4rem; margin-bottom: 40px; opacity: 0.9; font-weight: 400; text-shadow: 0 2px 4px rgba(0,0,0,0.6); }
 .btn-main { background: var(--verde); color: white; padding: 15px 40px; text-decoration: none; font-weight: 900; border-radius: 8px; font-size: 1.1rem; }
 
-/* --- SERVICIOS: Ajuste de contenedor al 5% (Más ancho, como querías) --- */
+/* --- SERVICIOS --- */
 .services-preview { padding: 80px 5%; background: var(--gris-fondo); }
 .services-header { text-align: center; margin-bottom: 60px; }
 .services-header h2 { font-size: 2.5rem; color: var(--oscuro); font-weight: 900; }
@@ -76,7 +87,7 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
 .clean-card-body p { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
 .link-arrow { color: var(--verde); font-weight: 900; text-transform: uppercase; font-size: 0.85rem; }
 
-/* --- IDENTIDAD & ALIADOS (5%) --- */
+/* --- IDENTIDAD & ALIADOS --- */
 .identity-banner { position: relative; padding: 120px 5%; background: url('../assets/img/bg-mapa.jpg') no-repeat center center/cover; background-attachment: fixed; text-align: center; color: white; }
 .identity-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(32, 23, 81, 0.7); }
 .identity-content-centered { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
@@ -122,16 +133,68 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
 .f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
 .wa-float { position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; }
 
+
+/* =========================================
+   REGLAS PARA CELULARES Y TABLETS (CORREGIDO)
+   ========================================= */
 @media (max-width: 900px) {
-    .header-grid { display: flex; flex-direction: column; gap: 20px; text-align: center; padding-bottom: 20px; }
-    .img-500 { width: 80%; max-width: 280px; } 
-    .side-r { width: 100%; }
-    .mpc-prominent-card { width: 100%; justify-content: center; padding: 20px; max-width: 90%; margin: 0 auto; }
+    
+    /* 1. Barra Superior (Limpieza) */
+    .top-brand-strip { height: auto; padding: 10px 0; }
+    .social-top-bar { justify-content: center; flex-direction: column; gap: 10px; }
+    .top-logo-container { display: none; } /* Ocultamos el logo pequeño, ya tenemos el grande abajo */
+    .top-text-center { display: none; } /* Ocultamos el texto largo para dar espacio */
+    .mobile-hide { display: none; } /* Oculta la palabra "SÍGUENOS" */
+    
+    /* 2. Header (Orden Lógico: Logo -> Título -> Tarjeta) */
+    .header-grid { display: flex; flex-direction: column; gap: 30px; text-align: center; padding-bottom: 20px; }
+    .logo-c { order: 1; } /* Logo primero */
+    .side-l { order: 2; transform: none; display: flex; flex-direction: column; align-items: center; } /* Quitamos el translateY negativo */
+    .side-r { order: 3; width: 100%; }
+
+    /* Tamaños de imagen ajustados al celular */
+    .img-500 { width: 85%; max-width: 250px; } 
+    .img-14-ani { width: 180px; margin-bottom: 10px; }
+    .main-title { font-size: 2.2rem; line-height: 1.1; margin-top: 15px; }
+
+    /* Tarjeta de MPC */
+    .mpc-prominent-card { width: 90%; max-width: 320px; padding: 20px; margin: 0 auto; }
+    
+    /* 3. Menú de Navegación */
     .nav-list { flex-direction: column; gap: 0; padding: 0; }
     .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
     .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
-    .footer-container { grid-template-columns: 1fr; gap: 40px; }
+    
+    /* 4. Hero (Corrigiendo el texto desbordado) */
+    .hero-clean { height: auto; padding: 80px 20px 60px; }
+    .typewriter { 
+        font-size: 2rem; 
+        white-space: normal; /* Permite que el texto baje a la siguiente línea */
+        border-right: none; 
+        animation: none; /* Quitamos animación en celular para evitar errores */
+        width: 100%; 
+        display: block; 
+        line-height: 1.2;
+    }
+    .hero-subtitle { font-size: 1.1rem; }
+    
+    /* 5. Secciones Generales */
+    .services-header h2 { font-size: 2rem; }
     .services-grid-clean { grid-template-columns: 1fr; }
-    .id-card { flex-direction: column; text-align: center; }
-    .typewriter { font-size: 1.8rem; white-space: normal; border-right: none; animation: none; width: 100%; display: block; }
+    .identity-banner { padding: 80px 5%; }
+    .identity-content-centered h2 { font-size: 2rem; }
+    .allies-grid { grid-template-columns: 1fr; gap: 20px; }
+    .client-logo-img { height: 70px; }
+    .mpc-logo-special { height: 100px !important; max-height: 100px; }
+    
+    /* 6. Footer */
+    .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .f-col-brand { align-items: center; }
+    .f-logo-footer { width: 250px; margin: 0 auto 20px auto; }
+    .brand-desc { margin: 0 auto 20px auto; }
+    .social-clean-row { justify-content: center; }
+    .contact-list li { justify-content: center; }
+
+    /* 7. Botón WhatsApp (Tamaño razonable para dedo) */
+    .wa-float { width: 60px; height: 60px; font-size: 35px; bottom: 20px; right: 20px; }
 }
