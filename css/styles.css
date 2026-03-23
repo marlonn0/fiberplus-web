@@ -32,21 +32,53 @@ html, body {
 .social-links-min a { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: white; border-radius: 50%; margin-left: 10px; text-decoration: none; font-size: 0.95rem; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 .top-fb { color: #1877F2 !important; } .top-ig { color: #E1306C !important; } .top-li { color: #0A66C2 !important; } .top-tk { color: #000000 !important; } 
 
-/* --- 2. HEADER PRINCIPAL (CORREGIDO PARA QUE NO SE CORTE EL LOGO DE 14 AÑOS) --- */
-.master-header { background: white; padding: 30px 5% 0; border-bottom: 1px solid #e2e8f0; } /* Se aumentó el padding superior a 30px */
+/* --- 2. HEADER PRINCIPAL (SOLUCIÓN DEFINITIVA PARA CORTES) --- */
+.master-header { background: white; padding: 30px 5% 0; border-bottom: 1px solid #e2e8f0; } /* Padding top corporativo */
 .header-grid { display: grid; grid-template-columns: 1fr 550px 1fr; align-items: center; max-width: 1750px; margin: 0 auto; gap: 40px; }
 
 /* Corrección de la columna izquierda (14 años) */
-.side-l { display: flex; flex-direction: column; align-items: flex-start; } /* Eliminado el transform: translateY negativo que causaba el corte */
-.main-title { font-family: 'Titillium Web', sans-serif !important; font-weight: 900; color: var(--oscuro); line-height: 0.9; letter-spacing: 0px; font-size: 2.8rem; text-transform: uppercase; margin-top: 15px;}
+.side-l { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    justify-content: center; 
+    height: 100%; 
+    margin-top: 0; /* ✅ Eliminamos translate/negativos que cortaban ✅ */
+}
+
+/* Ajustes de tamaño responsivo para que se achique antes de cortarse */
+.main-title { 
+    font-family: 'Titillium Web', sans-serif !important; 
+    font-weight: 900; 
+    color: var(--oscuro); 
+    line-height: 0.9; 
+    letter-spacing: 0px; 
+    font-size: 2.8rem; /* Tamaño base computadora */
+    text-transform: uppercase; 
+    margin-top: 15px; 
+    max-width: 100%; /* No se sale de su columna */
+}
 .v-accent { color: var(--verde); }
 
 @keyframes giroInfinito { from { transform: perspective(1000px) rotateY(0deg); } to { transform: perspective(1000px) rotateY(360deg); } }
-.img-14-ani { width: 240px; display: block; margin-bottom: 15px; animation: giroInfinito 6s linear infinite; transform-style: preserve-3d; }
-.img-500 { width: 500px; display: block; margin: 0 auto; }
+.img-14-ani { 
+    width: 100%; /* Usa todo el ancho de la columna L */
+    max-width: 240px; /* Pero no más de este tamaño base */
+    height: auto; 
+    display: block; 
+    margin-bottom: 15px; 
+    animation: giroInfinito 6s linear infinite; 
+    transform-style: preserve-3d; 
+}
+.img-500 { 
+    width: 100%; /* Usa el ancho de la columna C */
+    max-width: 500px; /* Pero no más de este tamaño base */
+    display: block; 
+    margin: 0 auto; 
+}
 
 /* Tarjeta MPC del Header */
-.mpc-prominent-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--negro-tarjeta); padding: 30px 25px; border-radius: 20px; border-top: 8px solid var(--verde-claro); box-shadow: 0 20px 50px rgba(0,0,0,0.3); text-decoration: none; gap: 15px; transition: all 0.3s ease; width: 320px; }
+.mpc-prominent-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--negro-tarjeta); padding: 30px 25px; border-radius: 20px; border-top: 8px solid var(--verde-claro); box-shadow: 0 20px 50px rgba(0,0,0,0.3); text-decoration: none; gap: 15px; transition: all 0.3s ease; width: 100%; max-width: 320px;}
 .mpc-card-logo { flex-shrink: 0; height: 120px; width: 100%; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 12px; padding: 8px; margin-bottom: 5px; overflow: hidden; }
 .img-mpc-fluid { height: 100%; width: auto; object-fit: contain; transform: scale(1.4); }
 .mpc-card-text { display: flex; flex-direction: column; align-items: center; width: 100%; }
@@ -124,7 +156,7 @@ html, body {
     .nav-link.active { border-bottom: none;}
     .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
     
-    /* 4. Footer */
+    /* 4. Footer Global */
     .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
     .f-col-brand { align-items: center; }
     .f-logo-footer { width: 250px; margin: 0 auto 20px auto; }
@@ -134,4 +166,10 @@ html, body {
 
     /* 5. Botón WhatsApp (Tamaño razonable) */
     .wa-float { width: 60px; height: 60px; font-size: 35px; bottom: 20px; right: 20px; }
+}
+
+/* ✅ NUEVO: MICRO-AJUSTE PARA "VISTA DE ORDENADOR" EN PANTALLAS MUY CHICAS ✅ */
+@media (max-width: 600px) {
+    .main-title { font-size: 2.3rem; } /* Se achica un poco más para evitar cortes forzados */
+    .img-14-ani { max-width: 190px; }
 }
