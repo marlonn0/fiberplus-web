@@ -15,11 +15,32 @@ html, body {
     width: 100%; max-width: 100%; overflow-x: hidden; position: relative;
 }
 
-/* --- HEADER --- */
-.top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
-.social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; height: 100%; }
+/* --- ESTILOS DE TEXTO --- */
+.main-title {
+    font-family: 'Titillium Web', sans-serif !important;
+    font-weight: 900; 
+    color: var(--oscuro); 
+    line-height: 0.9;
+    font-size: 2.8rem; 
+    text-transform: uppercase;
+    margin-top: 15px; /* Estandarizado */
+    max-width: 100%;
+}
 
-/* --- LOGO HEADER --- */
+h2, h3, h4, .section-title, .f-header {
+    font-family: 'Titillium Web', sans-serif !important;
+    font-weight: 900; 
+    text-transform: uppercase;
+}
+
+p, .btn-main, .btn-card, .btn-cta-big, .btn-submit, .btn-waze {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* --- HEADER Y NAVEGACIÓN (ESTANDARIZADO) --- */
+.top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
+.social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; height: 100%; position: relative; }
+
 .top-logo-container { 
     background-color: transparent; 
     height: 40px; 
@@ -28,6 +49,8 @@ html, body {
     overflow: visible; 
     box-shadow: none; 
     z-index: 10; 
+    position: relative;
+    top: -3px;
 }
 
 .top-bar-logo { 
@@ -41,7 +64,7 @@ html, body {
 .top-text-center { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
 
 /* --- REDES SOCIALES TOP BAR (BLANCAS PARA RESALTAR) --- */
-.social-links-min { display: flex; align-items: center; }
+.social-links-min { display: flex; align-items: center; margin-right: 15px; }
 .social-links-min .follow-text { margin-right: 5px; }
 .social-links-min a {
     display: inline-flex;
@@ -63,10 +86,12 @@ html, body {
 .top-li { color: #0A66C2 !important; }
 .top-tk { color: #000000 !important; }
 
-.master-header { background: white; padding: 10px 5% 0; border-bottom: 1px solid #e2e8f0; }
-.header-grid { display: grid; grid-template-columns: 1fr 550px 1fr; align-items: center; max-width: 1750px; margin: 0 auto; gap: 40px; }
-.side-l { transform: translateY(-45px); margin-top: 0; }
-.main-title { font-size: 2.8rem; font-weight: 900; color: var(--oscuro); line-height: 0.85; margin-top: 0; }
+/* --- HEADER PRINCIPAL --- */
+.master-header { background: white; padding: 10px 2% 0; border-bottom: 1px solid #e2e8f0; position: relative; }
+.header-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; max-width: 1750px; margin: 0 auto; gap: 40px; }
+
+/* Lado Izquierdo */
+.side-l { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; height: 100%; margin-top: 0; transform: none; }
 .v-accent { color: var(--verde); }
 
 /* --- ANIMACIÓN LOGO GIRATORIO --- */
@@ -77,19 +102,33 @@ html, body {
 
 .img-14-ani { 
     width: 240px; 
+    max-width: 100%;
     height: auto; 
     display: block; 
-    margin-bottom: 25px; 
+    margin-bottom: 15px; 
     margin-top: 0;
     animation: giroInfinito 6s linear infinite; 
     transform-style: preserve-3d;
 }
 /* -------------------------------- */
 
-.img-500 { width: 500px; display: block; margin: 0 auto; }
-.info-bubble-premium { background: white; padding: 20px; border-radius: 15px; border-left: 8px solid var(--verde); box-shadow: 10px 10px 30px rgba(0,0,0,0.05); }
+/* LOGO CENTRAL (600px) */
+.logo-c { display: flex; align-items: center; justify-content: center; width: 100%; }
+.img-500 { width: 600px; max-width: 100%; height: auto; display: block; margin: 0 auto; }
 
-.nav-global { margin-top: 15px; padding: 22px 0; border-top: 1px solid #f1f5f9; }
+/* --- LADO DERECHO: CUADRITO DE MENSAJE ESTILIZADO --- */
+.side-r { display: flex; align-items: center; justify-content: flex-end; width: 100%; position: relative; }
+.info-bubble-premium { 
+    background: var(--gris-fondo); /* Fondo gris claro corporativo */
+    padding: 20px; 
+    border-radius: 15px; 
+    border-left: 8px solid var(--verde); 
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.05); 
+    width: 100%;
+    max-width: 320px;
+}
+
+.nav-global { margin-top: 15px; padding: 22px 0; border-top: 1px solid #f1f5f9; position: relative; z-index: 10; }
 .nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; }
 .nav-link { text-decoration: none; color: #0f172a; font-weight: 900; text-transform: uppercase; font-size: 1.1rem; }
 .nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); padding-bottom: 5px; }
@@ -257,8 +296,32 @@ html, body {
 .f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
 .wa-float { position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; }
 
-/* Responsive */
+/* Responsive (ESTANDARIZADO) */
 @media (max-width: 900px) {
+    .top-brand-strip { height: auto; padding: 10px 0; }
+    .social-top-bar { justify-content: center; flex-direction: column; gap: 10px; text-align: center; width: 100%;}
+    .top-logo-container { display: none; }
+    .top-text-center { display: none; position: static; transform: none; } 
+    .social-links-min { justify-content: center; margin-right: 0;}
+    .social-links-min span { display: none; }
+    
+    .master-header { padding: 20px 5% 0; }
+    .header-grid { display: flex; flex-direction: column; gap: 30px; text-align: center; padding-bottom: 20px; }
+    .logo-c { order: 1; } 
+    .side-l { order: 2; transform: none; display: flex; flex-direction: column; align-items: center; margin-top: 0;} 
+    .side-r { order: 3; width: 100%; justify-content: center;}
+
+    .img-500 { width: 85%; max-width: 300px; } 
+    .img-14-ani { width: 180px; margin-bottom: 10px; }
+    .main-title { font-size: 2.2rem; line-height: 1.1; margin-top: 15px; }
+
+    .info-bubble-premium { width: 90%; max-width: 320px; margin: 0 auto; text-align: center; }
+    
+    .nav-list { flex-direction: column; gap: 0; padding: 0; }
+    .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
+    .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
+
+    /* Específicos de Contacto Responsive */
     .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
     .fp-form { grid-template-columns: 1fr; }
     .full-width { grid-column: span 1; }
@@ -266,10 +329,11 @@ html, body {
     .typewriter { font-size: 2.2rem; white-space: normal; animation: none; border: none; }
     .hero-subtitle { font-size: 1.2rem; }
     
-    .header-grid { display: flex; flex-direction: column; gap: 20px; text-align: center; padding-bottom: 20px; }
-    .img-500 { width: 80%; max-width: 280px; } 
-    .nav-list { flex-direction: column; gap: 0; padding: 0; }
-    .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
-    .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
-    .footer-container { grid-template-columns: 1fr; gap: 40px; }
+    .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center;}
+    .f-col-brand { align-items: center; }
+    .f-logo-footer { width: 250px; margin: 0 auto 20px auto; }
+    .brand-desc { margin: 0 auto 20px auto; }
+    .social-clean-row { justify-content: center; margin-right: 0;}
+    .contact-list li { justify-content: center; }
+    .wa-float { width: 60px; height: 60px; font-size: 35px; bottom: 20px; right: 20px; }
 }

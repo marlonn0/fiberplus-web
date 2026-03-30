@@ -1,242 +1,260 @@
-    /* =========================================
-    ESTILOS EXCLUSIVOS: INICIO / HOME 
-    Archivo: css/inicio.css
-    ========================================= */
+/* =========================================
+   ESTILOS EXCLUSIVOS: INICIO / HOME 
+   Archivo: css/inicio.css
+   ========================================= */
 
-    @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
 
-    /* --- BASES --- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+/* --- BASES --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-        --verde: #4ca686; /* Tu verde original */
-        --azul: #385dae;  /* Tu azul original */
-        --oscuro: #201751;
-        --negro-tarjeta: #000000; 
-        --gris-fondo: #f8fafc; 
-        --blanco: #ffffff;
-    }
+:root {
+    --verde: #4ca686; /* Tu verde original de Fiberplus */
+    --azul: #385dae;  /* Tu azul original de Fiberplus */
+    --oscuro: #201751;
+    --negro-tarjeta: #000000; 
+    --gris-fondo: #f8fafc; 
+    --blanco: #ffffff;
+    --verde-claro: #2ebd59;
+}
 
-    html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--blanco); width: 100%; max-width: 100%; overflow-x: hidden; }
+html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--blanco); width: 100%; max-width: 100%; overflow-x: hidden; }
 
-    /* --- 1. TOP BAR --- */
-    .top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
-    .social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; position: relative;}
-    .top-logo-container { height: 40px; width: 110px; display: flex; align-items: center; justify-content: center; position: relative; top: -3px; z-index: 10; }
-    .top-bar-logo { height: 100%; width: 100%; object-fit: contain; transform: scale(3.5); filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3)); }
-    .top-text-center { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-    .social-links-min { display: flex; align-items: center; margin-right: 15px; }
-    .social-links-min a { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: white; border-radius: 50%; margin-left: 10px; text-decoration: none; font-size: 0.95rem; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-    .top-fb { color: #1877F2 !important; } .top-ig { color: #E1306C !important; } .top-li { color: #0A66C2 !important; } .top-tk { color: #000000 !important; } 
+/* --- 1. TOP BAR --- */
+.top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
+.social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; position: relative;}
+.top-logo-container { height: 40px; width: 110px; display: flex; align-items: center; justify-content: center; position: relative; top: -3px; z-index: 10; }
+.top-bar-logo { height: 100%; width: 100%; object-fit: contain; transform: scale(3.5); filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3)); }
+.top-text-center { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+.social-links-min { display: flex; align-items: center; margin-right: 15px; }
+.social-links-min a { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: white; border-radius: 50%; margin-left: 10px; text-decoration: none; font-size: 0.95rem; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+.top-fb { color: #1877F2 !important; } .top-ig { color: #E1306C !important; } .top-li { color: #0A66C2 !important; } .top-tk { color: #000000 !important; } 
 
-    /* --- 2. HEADER PRINCIPAL --- */
-    .master-header { background: white; padding: 30px 2% 0; border-bottom: 1px solid #e2e8f0; } 
-    .header-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; max-width: 1800px; margin: 0 auto; gap: 40px; }
+/* --- 2. HEADER PRINCIPAL (DIMENSIONES ORIGINALES RESPETADAS) --- */
+.master-header { background: white; padding: 10px 2% 0; border-bottom: 1px solid #e2e8f0; position: relative; } 
+.header-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; max-width: 1750px; margin: 0 auto; gap: 40px; }
 
-    /* Lado Izquierdo (14 años y título) */
-    .side-l { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; height: 100%; }
-    .main-title { font-family: 'Titillium Web', sans-serif !important; font-weight: 900; color: var(--oscuro); line-height: 0.9; letter-spacing: 0px; font-size: 2.8rem; text-transform: uppercase; margin-top: 15px; max-width: 100%;}
-    .v-accent { color: var(--verde); }
-    @keyframes giroInfinito { from { transform: perspective(1000px) rotateY(0deg); } to { transform: perspective(1000px) rotateY(360deg); } }
-    .img-14-ani { width: 240px; max-width: 100%; display: block; margin-bottom: 15px; animation: giroInfinito 6s linear infinite; transform-style: preserve-3d; }
+/* Lado Izquierdo */
+.side-l { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; height: 100%; }
+.main-title { font-family: 'Titillium Web', sans-serif !important; font-weight: 900; color: var(--oscuro); line-height: 0.9; letter-spacing: 0px; font-size: 2.8rem; text-transform: uppercase; margin-top: 15px; max-width: 100%;}
+.v-accent { color: var(--verde); }
+@keyframes giroInfinito { from { transform: perspective(1000px) rotateY(0deg); } to { transform: perspective(1000px) rotateY(360deg); } }
+.img-14-ani { width: 240px; max-width: 100%; display: block; margin-bottom: 15px; animation: giroInfinito 6s linear infinite; transform-style: preserve-3d; }
 
-    /* LOGO CENTRAL - TAMAÑO REAL Y CENTRADO */
-    .logo-c { display: flex; align-items: center; justify-content: center; width: 100%; }
-    .img-500 { 
-        width: 600px; 
-        max-width: 100%; 
-        height: auto;
-        display: block; 
-        margin: 0 auto; 
-    }
+/* LOGO CENTRAL (TAMAÑO ORIGINAL RESTAURADO Y CENTRADO) */
+.logo-c { display: flex; align-items: center; justify-content: center; width: 100%; }
+.img-500 { 
+    width: 600px; 
+    max-width: 100%; 
+    height: auto;
+    display: block; 
+    margin: 0 auto; 
+}
 
-    /* ✅ LADO DERECHO: TARJETA ESTILO MPC IDÉNTICA ✅ */
-    .side-r { display: flex; align-items: center; justify-content: flex-end; width: 100%; }
+/* --- ✅ LADO DERECHO: TARJETA ESTILIZADA, MÁS LARGA Y CON MÁS SOMBRA ✅ --- */
+.side-r { display: flex; align-items: center; justify-content: flex-end; width: 100%; position: relative; }
+.mpc-prominent-card { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    background: #ffffff; 
+    padding: 45px 30px; 
+    border-radius: 20px; 
+    border: 1px solid #e2e8f0; 
+    border-top: 8px solid var(--verde); 
+    box-shadow: 0 25px 70px rgba(0,0,0,0.18); 
+    text-decoration: none; 
+    width: 100%; 
+    max-width: 380px; 
+    transform: translateY(-10px); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 15px; 
+    z-index: 20;
+}
+.mpc-prominent-card:hover { 
+    transform: translateY(-15px); 
+    box-shadow: 0 35px 80px rgba(76, 166, 134, 0.35); 
+}
+
+.card-subtitle { 
+    background: #f1f5f9; 
+    color: #475569; 
+    padding: 8px 18px; 
+    border-radius: 30px; 
+    font-size: 0.75rem; 
+    font-weight: 800; 
+    letter-spacing: 1.5px; 
+    text-transform: uppercase; 
+    margin-bottom: 20px; 
+    display: inline-block;
+}
+
+/* ✅ CONTENEDOR DEL LOGO: INTACTO ✅ */
+.mpc-card-logo { 
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 20px; 
+}
+.img-mpc-fluid { 
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    /* ✅ AQUÍ ESTÁ EL ZOOM AGRESIVO: De 1.5 a 2.2 para matar el espacio en blanco ✅ */
+    transform: scale(3.2); 
+    max-height: 75px; 
+}
+
+.mpc-card-text { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+.card-desc { color: #64748b; font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; }
+
+.card-link { 
+    color: var(--verde); 
+    font-weight: 800; 
+    font-size: 1.05rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    transition: color 0.3s ease; 
+}
+.mpc-prominent-card:hover .card-link { color: var(--oscuro); }
+
+/* --- 3. NAVEGACIÓN --- */
+.nav-global { margin-top: 15px; padding: 22px 0; border-top: 1px solid #f1f5f9; position: relative; z-index: 10; }
+.nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; }
+.nav-link { text-decoration: none; color: #0f172a; font-family: 'Titillium Web', sans-serif; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; }
+.nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); padding-bottom: 5px;}
+.nav-cta { background: var(--verde); color: white; padding: 12px 25px; border-radius: 8px; font-weight: 900; text-decoration: none; }
+
+/* --- 4. HERO --- */
+.hero-clean { height: 500px; width: 100%; position: relative; background: url('../assets/img/portada-inicio.jpg') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
+.hero-overlay-dark { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(32, 23, 81, 0.3); z-index: 1; }
+.hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 20px; color: white; }
+.typewriter { font-family: 'Titillium Web', sans-serif !important; font-size: 2.8rem; font-weight: 900; margin: 0 auto 20px; display: inline-block; overflow: hidden; border-right: 5px solid var(--verde); white-space: nowrap; letter-spacing: 2px; max-width: fit-content; animation: typing 3.5s steps(30, end) forwards, blink-caret .75s step-end infinite; }
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--verde); } }
+.hero-subtitle { font-size: 1.4rem; margin-bottom: 40px; opacity: 0.9; font-weight: 400; text-shadow: 0 2px 4px rgba(0,0,0,0.6); }
+.btn-main { background: var(--verde); color: white; padding: 15px 40px; text-decoration: none; font-weight: 900; border-radius: 8px; font-size: 1.1rem; }
+
+/* --- 5. SERVICIOS --- */
+.services-preview { padding: 80px 5%; background: var(--gris-fondo); }
+.services-header { text-align: center; margin-bottom: 60px; }
+.services-header h2 { font-size: 2.5rem; color: var(--oscuro); font-weight: 900; }
+.underline-center { width: 100px; height: 5px; background: var(--verde); margin: 15px auto; }
+.services-grid-clean { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1400px; margin: 0 auto; }
+.clean-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee; text-decoration: none; color: inherit; transition: 0.3s; display: flex; flex-direction: column; }
+.clean-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--verde); }
+.clean-card-img { width: 100%; height: 220px; overflow: hidden; border-bottom: 5px solid var(--verde); }
+.clean-card-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.clean-card:hover .clean-card-img img { transform: scale(1.1); }
+.clean-card-body { padding: 30px; position: relative; flex-grow: 1; display: flex; flex-direction: column; }
+.icon-floating { position: absolute; top: -30px; right: 20px; width: 60px; height: 60px; background: var(--azul); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 4px solid white; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+.clean-card-body h3 { margin-top: 10px; font-size: 1.4rem; color: var(--oscuro); margin-bottom: 15px; }
+.clean-card-body p { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+.link-arrow { color: var(--verde); font-weight: 900; text-transform: uppercase; font-size: 0.85rem; }
+
+/* --- 6. IDENTIDAD & ALIADOS --- */
+.identity-banner { position: relative; padding: 120px 5%; background: url('../assets/img/bg-mapa.jpg') no-repeat center center/cover; background-attachment: fixed; text-align: center; color: white; }
+.identity-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(32, 23, 81, 0.7); }
+.identity-content-centered { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+.big-icon { font-size: 4rem; color: var(--verde); margin-bottom: 20px; }
+.identity-content-centered h2 { font-size: 2.5rem; margin-bottom: 20px; }
+
+.allies-section { padding: 80px 5%; text-align: center; background: white; }
+.section-title { font-size: 2.2rem; color: var(--oscuro); font-weight: 900; margin-bottom: 50px; }
+.allies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; justify-content: center; }
+.ally-card { border: 1px solid #e2e8f0; padding: 40px 20px; border-radius: 12px; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #fff; }
+.ally-card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.08); border-color: var(--verde); transform: translateY(-5px); }
+.client-logo-img { height: 90px; width: auto; max-width: 100%; object-fit: contain; margin-bottom: 25px; }
+.mpc-logo-special { height: 140px !important; max-height: 140px; }
+.ally-info h4 { font-weight: 900; color: var(--oscuro); font-size: 1.1rem; margin-bottom: 5px; text-transform: uppercase; }
+.ally-info p { font-size: 0.85rem; color: #64748b; font-weight: 600; }
+
+/* --- 7. FOOTER --- */
+.footer-master { background: var(--blanco); border-top: 1px solid #e2e8f0; position: relative; padding-top: 80px; }
+.f-top-accent { height: 12px; background: var(--verde); width: 100%; position: absolute; top: 0; left: 0; }
+.footer-container { max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; padding: 0 5% 100px; align-items: flex-start; }
+.f-col-brand { display: flex; flex-direction: column; justify-content: flex-start; }
+.f-logo-footer { width: 320px; margin-bottom: 20px; }
+.brand-desc { color: #64748b; margin-bottom: 25px; font-size: 0.95rem; max-width: 80%; font-weight: 600; }
+.social-clean-row { display: flex; gap: 15px; justify-content: flex-start; margin-right: 15px; }
+.soc-icon { width: 45px; height: 45px; color: white !important; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; transition: 0.3s; }
+.soc-icon.fb { background: #1877F2; } .soc-icon.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); } .soc-icon.li { background: #0A66C2; } .soc-icon.tk { background: #000000; } 
+.soc-icon:hover { transform: translateY(-5px); filter: brightness(1.15); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+.f-col-uniform { display: flex; flex-direction: column; }
+.footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid #d1d5db; }
+.highlight-card { border-top: 6px solid var(--azul); text-align: center; }
+.f-header { color: var(--verde); font-weight: 900; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
+.contact-list li { display: flex; align-items: center; margin-bottom: 10px; color: #334155; font-weight: 600; gap: 10px; }
+.contact-list li i { color: var(--azul); width: 25px; font-size: 1.1rem; }
+.divider-mini { border-top: 1px solid #cbd5e1; margin: 15px 0; }
+.loc-title { font-weight: 900; color: var(--oscuro); font-size: 0.95rem; margin-bottom: 5px; }
+.loc-text { font-size: 0.85rem; color: #64748b; line-height: 1.4; margin-bottom: 15px; }
+.sgs-badge { margin-bottom: 10px; }
+.big-percent { font-size: 3rem; font-weight: 900; color: var(--azul); display: block; line-height: 1; }
+.sgs-label { font-size: 0.8rem; letter-spacing: 1px; color: #64748b; font-weight: 800; }
+.sgs-note { font-weight: 700; color: var(--oscuro); }
+.f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
+.wa-float { position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; }
+
+/* =========================================
+   REGLAS PARA CELULARES Y TABLETS
+   ========================================= */
+@media (max-width: 900px) {
+    .top-brand-strip { height: auto; padding: 10px 0; }
+    .social-top-bar { justify-content: center; flex-direction: column; gap: 10px; text-align: center; width: 100%;}
+    .top-logo-container { display: none; }
+    .top-text-center { display: none; position: static; transform: none; } 
+    .social-links-min { justify-content: center; margin-right: 0;}
+    .social-links-min span { display: none; }
+    
+    .master-header { padding: 20px 5% 0; }
+    .header-grid { display: flex; flex-direction: column; gap: 30px; text-align: center; padding-bottom: 20px; }
+    .logo-c { order: 1; } 
+    .side-l { order: 2; transform: none; display: flex; flex-direction: column; align-items: center; margin-top: 0;} 
+    .side-r { order: 3; width: 100%; justify-content: center;}
+
+    .img-500 { width: 85%; max-width: 300px; } 
+    .img-14-ani { width: 180px; margin-bottom: 10px; }
+    .main-title { font-size: 2.2rem; line-height: 1.1; margin-top: 15px; }
+
     .mpc-prominent-card { 
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        text-align: center; 
-        background: #ffffff; 
-        padding: 35px 25px; 
-        border-radius: 16px; 
-        border: 1px solid #e2e8f0; 
-        border-top: 6px solid var(--verde); /* Usando el verde de Fiberplus */
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-        text-decoration: none; 
-        width: 100%; 
-        max-width: 320px; 
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 90%; max-width: 320px; 
+        padding: 45px 30px; 
+        margin: 0 auto; 
+        transform: translateY(0); 
+        gap: 15px; 
     }
-    .mpc-prominent-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+    .mpc-prominent-card:hover { transform: translateY(-5px); }
+    /* ✅ Zoom también aumentado en celular ✅ */
+    .img-mpc-fluid { transform: scale(1.8); max-height: 55px; } 
+    
+    .nav-list { flex-direction: column; gap: 0; padding: 0; }
+    .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
+    .nav-link.active { border-bottom: none;}
+    .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
+    
+    .hero-clean { height: auto; padding: 80px 20px 60px; }
+    .typewriter { font-size: 2rem; white-space: normal; border-right: none; animation: none; width: 100%; display: block; line-height: 1.2; }
+    .hero-subtitle { font-size: 1.1rem; }
+    
+    .services-header h2 { font-size: 2rem; }
+    .services-grid-clean { grid-template-columns: 1fr; }
+    .identity-banner { padding: 80px 5%; }
+    .identity-content-centered h2 { font-size: 2rem; }
+    .allies-grid { grid-template-columns: 1fr; gap: 20px; }
+    .ally-card { padding: 30px 15px;}
+    .client-logo-img { height: 70px; }
+    .mpc-logo-special { height: 100px !important; max-height: 100px; }
+    
+    .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .f-col-brand { align-items: center; }
+    .f-logo-footer { width: 250px; margin: 0 auto 20px auto; }
+    .brand-desc { margin: 0 auto 20px auto; }
+    .social-clean-row { justify-content: center; margin-right: 0;}
+    .contact-list li { justify-content: center; }
 
-    .card-subtitle { 
-        background: #f1f5f9; /* Gris clarito */
-        color: #475569; /* Gris texto */
-        padding: 8px 18px; 
-        border-radius: 30px; 
-        font-size: 0.75rem; 
-        font-weight: 800; 
-        letter-spacing: 1.5px; 
-        text-transform: uppercase; 
-        margin-bottom: 25px; 
-        display: inline-block;
-    }
-
-    .mpc-card-logo { 
-        height: 60px; 
-        width: 100%; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        margin-bottom: 20px; 
-    }
-    .img-mpc-fluid { height: 100%; width: auto; object-fit: contain; }
-
-    .card-desc { 
-        color: #64748b; 
-        font-size: 0.95rem; 
-        line-height: 1.5; 
-        margin-bottom: 25px; 
-    }
-
-    .card-link { 
-        color: var(--verde); 
-        font-weight: 800; 
-        font-size: 1.05rem; 
-        display: flex; 
-        align-items: center; 
-        gap: 8px; 
-        transition: color 0.3s ease; 
-    }
-    .mpc-prominent-card:hover .card-link { color: var(--oscuro); }
-
-    /* --- 3. NAVEGACIÓN --- */
-    .nav-global { margin-top: 20px; padding: 15px 0; border-top: 1px solid #f1f5f9; }
-    .nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; }
-    .nav-link { text-decoration: none; color: #0f172a; font-family: 'Titillium Web', sans-serif; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; }
-    .nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); padding-bottom: 5px;}
-    .nav-cta { background: var(--verde); color: white; padding: 12px 25px; border-radius: 8px; font-weight: 900; text-decoration: none; }
-
-    /* --- 4. HERO --- */
-    /* ✅ Altura ajustada a 500px para igualar otras páginas ✅ */
-    .hero-clean { height: 500px; width: 100%; position: relative; background: url('../assets/img/portada-inicio.jpg') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
-    .hero-overlay-dark { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(32, 23, 81, 0.3); z-index: 1; }
-    .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 20px; color: white; }
-    .typewriter { font-family: 'Titillium Web', sans-serif !important; font-size: 2.8rem; font-weight: 900; margin: 0 auto 20px; display: inline-block; overflow: hidden; border-right: 5px solid var(--verde); white-space: nowrap; letter-spacing: 2px; max-width: fit-content; animation: typing 3.5s steps(30, end) forwards, blink-caret .75s step-end infinite; }
-    @keyframes typing { from { width: 0 } to { width: 100% } }
-    @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--verde); } }
-    .hero-subtitle { font-size: 1.4rem; margin-bottom: 40px; opacity: 0.9; font-weight: 400; text-shadow: 0 2px 4px rgba(0,0,0,0.6); }
-    .btn-main { background: var(--verde); color: white; padding: 15px 40px; text-decoration: none; font-weight: 900; border-radius: 8px; font-size: 1.1rem; }
-
-    /* --- 5. SERVICIOS --- */
-    .services-preview { padding: 80px 5%; background: var(--gris-fondo); }
-    .services-header { text-align: center; margin-bottom: 60px; }
-    .services-header h2 { font-size: 2.5rem; color: var(--oscuro); font-weight: 900; }
-    .underline-center { width: 100px; height: 5px; background: var(--verde); margin: 15px auto; }
-    .services-grid-clean { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1400px; margin: 0 auto; }
-    .clean-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee; text-decoration: none; color: inherit; transition: 0.3s; display: flex; flex-direction: column; }
-    .clean-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--verde); }
-    .clean-card-img { width: 100%; height: 220px; overflow: hidden; border-bottom: 5px solid var(--verde); }
-    .clean-card-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-    .clean-card:hover .clean-card-img img { transform: scale(1.1); }
-    .clean-card-body { padding: 30px; position: relative; flex-grow: 1; display: flex; flex-direction: column; }
-    .icon-floating { position: absolute; top: -30px; right: 20px; width: 60px; height: 60px; background: var(--azul); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 4px solid white; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
-    .clean-card-body h3 { margin-top: 10px; font-size: 1.4rem; color: var(--oscuro); margin-bottom: 15px; }
-    .clean-card-body p { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
-    .link-arrow { color: var(--verde); font-weight: 900; text-transform: uppercase; font-size: 0.85rem; }
-
-    /* --- 6. IDENTIDAD & ALIADOS --- */
-    .identity-banner { position: relative; padding: 120px 5%; background: url('../assets/img/bg-mapa.jpg') no-repeat center center/cover; background-attachment: fixed; text-align: center; color: white; }
-    .identity-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(32, 23, 81, 0.7); }
-    .identity-content-centered { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
-    .big-icon { font-size: 4rem; color: var(--verde); margin-bottom: 20px; }
-    .identity-content-centered h2 { font-size: 2.5rem; margin-bottom: 20px; }
-
-    .allies-section { padding: 80px 5%; text-align: center; background: white; }
-    .section-title { font-size: 2.2rem; color: var(--oscuro); font-weight: 900; margin-bottom: 50px; }
-    .allies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; justify-content: center; }
-    .ally-card { border: 1px solid #e2e8f0; padding: 40px 20px; border-radius: 12px; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #fff; }
-    .ally-card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.08); border-color: var(--verde); transform: translateY(-5px); }
-    .client-logo-img { height: 90px; width: auto; max-width: 100%; object-fit: contain; margin-bottom: 25px; }
-    .mpc-logo-special { height: 140px !important; max-height: 140px; }
-    .ally-info h4 { font-weight: 900; color: var(--oscuro); font-size: 1.1rem; margin-bottom: 5px; text-transform: uppercase; }
-    .ally-info p { font-size: 0.85rem; color: #64748b; font-weight: 600; }
-
-    /* --- 7. FOOTER --- */
-    .footer-master { background: var(--blanco); border-top: 1px solid #e2e8f0; position: relative; padding-top: 80px; }
-    .f-top-accent { height: 12px; background: var(--verde); width: 100%; position: absolute; top: 0; left: 0; }
-    .footer-container { max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; padding: 0 5% 100px; align-items: flex-start; }
-    .f-col-brand { display: flex; flex-direction: column; justify-content: flex-start; }
-    .f-logo-footer { width: 320px; margin-bottom: 20px; }
-    .brand-desc { color: #64748b; margin-bottom: 25px; font-size: 0.95rem; max-width: 80%; font-weight: 600; }
-    .social-clean-row { display: flex; gap: 15px; justify-content: flex-start; margin-right: 15px; }
-    .soc-icon { width: 45px; height: 45px; color: white !important; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; transition: 0.3s; }
-    .soc-icon.fb { background: #1877F2; } .soc-icon.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); } .soc-icon.li { background: #0A66C2; } .soc-icon.tk { background: #000000; } 
-    .soc-icon:hover { transform: translateY(-5px); filter: brightness(1.15); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-    .f-col-uniform { display: flex; flex-direction: column; }
-    .footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid #d1d5db; }
-    .highlight-card { border-top: 6px solid var(--azul); text-align: center; }
-    .f-header { color: var(--verde); font-weight: 900; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
-    .contact-list li { display: flex; align-items: center; margin-bottom: 10px; color: #334155; font-weight: 600; gap: 10px; }
-    .contact-list li i { color: var(--azul); width: 25px; font-size: 1.1rem; }
-    .divider-mini { border-top: 1px solid #cbd5e1; margin: 15px 0; }
-    .loc-title { font-weight: 900; color: var(--oscuro); font-size: 0.95rem; margin-bottom: 5px; }
-    .loc-text { font-size: 0.85rem; color: #64748b; line-height: 1.4; margin-bottom: 15px; }
-    .sgs-badge { margin-bottom: 10px; }
-    .big-percent { font-size: 3rem; font-weight: 900; color: var(--azul); display: block; line-height: 1; }
-    .sgs-label { font-size: 0.8rem; letter-spacing: 1px; color: #64748b; font-weight: 800; }
-    .sgs-note { font-weight: 700; color: var(--oscuro); }
-    .f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
-    .wa-float { position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; }
-
-    /* =========================================
-    ✅ REGLAS PARA CELULARES Y TABLETS ✅
-    ========================================= */
-    @media (max-width: 900px) {
-        .top-brand-strip { height: auto; padding: 10px 0; }
-        .social-top-bar { justify-content: center; flex-direction: column; gap: 10px; text-align: center; width: 100%;}
-        .top-logo-container { display: none; }
-        .top-text-center { display: none; position: static; transform: none; } 
-        .social-links-min { justify-content: center; margin-right: 0;}
-        .social-links-min span { display: none; }
-        
-        .master-header { padding: 20px 5% 0; }
-        .header-grid { display: flex; flex-direction: column; gap: 30px; text-align: center; padding-bottom: 20px; }
-        .logo-c { order: 1; } 
-        .side-l { order: 2; transform: none; display: flex; flex-direction: column; align-items: center; margin-top: 0;} 
-        .side-r { order: 3; width: 100%; justify-content: center;}
-
-        .img-500 { width: 85%; max-width: 300px; } 
-        .img-14-ani { width: 180px; margin-bottom: 10px; }
-        .main-title { font-size: 2.2rem; line-height: 1.1; margin-top: 15px; }
-
-        .mpc-prominent-card { width: 90%; max-width: 320px; padding: 25px 20px; margin: 0 auto; }
-        
-        .nav-list { flex-direction: column; gap: 0; padding: 0; }
-        .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
-        .nav-link.active { border-bottom: none;}
-        .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
-        
-        .hero-clean { height: auto; padding: 80px 20px 60px; }
-        .typewriter { font-size: 2rem; white-space: normal; border-right: none; animation: none; width: 100%; display: block; line-height: 1.2; }
-        .hero-subtitle { font-size: 1.1rem; }
-        
-        .services-header h2 { font-size: 2rem; }
-        .services-grid-clean { grid-template-columns: 1fr; }
-        .identity-banner { padding: 80px 5%; }
-        .identity-content-centered h2 { font-size: 2rem; }
-        .allies-grid { grid-template-columns: 1fr; gap: 20px; }
-        .ally-card { padding: 30px 15px;}
-        .client-logo-img { height: 70px; }
-        .mpc-logo-special { height: 100px !important; max-height: 100px; }
-        
-        .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-        .f-col-brand { align-items: center; }
-        .f-logo-footer { width: 250px; margin: 0 auto 20px auto; }
-        .brand-desc { margin: 0 auto 20px auto; }
-        .social-clean-row { justify-content: center; margin-right: 0;}
-        .contact-list li { justify-content: center; }
-
-        .wa-float { width: 60px; height: 60px; font-size: 35px; bottom: 20px; right: 20px; }
-    }
+    .wa-float { width: 60px; height: 60px; font-size: 35px; bottom: 20px; right: 20px; }
+}
