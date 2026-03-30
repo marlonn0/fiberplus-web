@@ -51,8 +51,14 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
     margin: 0 auto; 
 }
 
-/* --- ✅ LADO DERECHO: TARJETA ESTILIZADA, MÁS LARGA Y CON MÁS SOMBRA ✅ --- */
-.side-r { display: flex; align-items: center; justify-content: flex-end; width: 100%; position: relative; }
+/* --- LADO DERECHO: TARJETA ESTILIZADA Y CLIC CORREGIDO --- */
+.side-r { 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-end; 
+    width: 100%; 
+    position: relative; 
+}
 .mpc-prominent-card { 
     display: flex; 
     flex-direction: column; 
@@ -65,8 +71,9 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
     border-top: 8px solid var(--verde); 
     box-shadow: 0 25px 70px rgba(0,0,0,0.18); 
     text-decoration: none; 
-    width: 100%; 
+    width: auto; 
     max-width: 380px; 
+    margin-left: auto; 
     transform: translateY(-10px); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     gap: 15px; 
@@ -90,7 +97,6 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
     display: inline-block;
 }
 
-/* ✅ CONTENEDOR DEL LOGO: INTACTO ✅ */
 .mpc-card-logo { 
     width: 100%; 
     display: flex; 
@@ -102,8 +108,7 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
     width: 100%; 
     height: auto; 
     object-fit: contain; 
-    /* ✅ AQUÍ ESTÁ EL ZOOM AGRESIVO: De 1.5 a 2.2 para matar el espacio en blanco ✅ */
-    transform: scale(3.2); 
+    transform: scale(2.2); 
     max-height: 75px; 
 }
 
@@ -187,8 +192,13 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
 .footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid #d1d5db; }
 .highlight-card { border-top: 6px solid var(--azul); text-align: center; }
 .f-header { color: var(--verde); font-weight: 900; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
+
+/* ✅ ESTILOS DE LOS ENLACES DE CONTACTO (TELÉFONO / CORREO) ✅ */
 .contact-list li { display: flex; align-items: center; margin-bottom: 10px; color: #334155; font-weight: 600; gap: 10px; }
 .contact-list li i { color: var(--azul); width: 25px; font-size: 1.1rem; }
+.contact-link { color: #334155; text-decoration: none; transition: all 0.3s ease; display: inline-block; }
+.contact-link:hover { color: var(--verde); transform: translateX(5px); }
+
 .divider-mini { border-top: 1px solid #cbd5e1; margin: 15px 0; }
 .loc-title { font-weight: 900; color: var(--oscuro); font-size: 0.95rem; margin-bottom: 5px; }
 .loc-text { font-size: 0.85rem; color: #64748b; line-height: 1.4; margin-bottom: 15px; }
@@ -228,7 +238,6 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
         gap: 15px; 
     }
     .mpc-prominent-card:hover { transform: translateY(-5px); }
-    /* ✅ Zoom también aumentado en celular ✅ */
     .img-mpc-fluid { transform: scale(1.8); max-height: 55px; } 
     
     .nav-list { flex-direction: column; gap: 0; padding: 0; }
