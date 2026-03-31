@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seguridad Industrial | Fiberplus Cía. Ltda.</title>
     
+    <link rel="icon" type="image/png" href="../assets/img/logo-mini.png">
+
+    <meta property="og:title" content="Seguridad Industrial | Fiberplus">
+    <meta property="og:description" content="Nuestra prioridad es que cada colaborador regrese seguro a casa. Más allá de la norma, aplicamos una disciplina operativa rigurosa.">
+    <meta property="og:image" content="https://marlonn0.github.io/fiberplus-web/assets/img/portada-inicio.jpg">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="../css/seguridad.css">
-    <link rel="stylesheet" href="../css/style.css"> 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -59,7 +65,7 @@
                 <span class="contact-hint">INGENIERÍA DE VANGUARDIA CERTIFICADA</span>
             </div>
             <div class="social-links-min">
-                <span class="follow-text">SÍGUENOS:</span>
+                <span class="follow-text mobile-hide">SÍGUENOS:</span>
                 <a href="https://www.facebook.com/share/1BLmzNNoT5/" target="_blank" class="top-fb"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/fiberplusecuador?igsh=MWhnYTc0a2ptdmc0cw==" target="_blank" class="top-ig"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/fiberplus-cia-ltda-773b88236" target="_blank" class="top-li"><i class="fab fa-linkedin-in"></i></a>
@@ -87,7 +93,10 @@
         </div>
 
         <nav class="nav-global">
-            <ul class="nav-list">
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i> MENÚ
+            </div>
+            <ul class="nav-list" id="mainNavList">
                 <li><a href="../index.html" class="nav-link">INICIO</a></li>
                 <li><a href="nosotros.html" class="nav-link">NOSOTROS</a></li>
                 <li><a href="negocios.html" class="nav-link">NEGOCIOS</a></li>
@@ -269,24 +278,21 @@
     <a href="https://wa.me/593987626160?text=Hola%20Fiberplus,%20quisiera%20m%C3%A1s%20informaci%C3%B3n" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
-        // 1. Establecer la fecha de inicio
+        // --- CÓDIGO DEL CONTADOR DE SEGURIDAD ---
         const fechaInicio = new Date(2022, 11, 1); 
 
-        // 2. Función para calcular los días
         function calcularDias() {
             const hoy = new Date();
             const diferenciaTiempo = hoy.getTime() - fechaInicio.getTime();
             return Math.floor(diferenciaTiempo / (1000 * 3600 * 24));
         }
 
-        // 3. Escribir la fecha actual en pantalla
         function mostrarFechaActual() {
             const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
             const fechaHoyTexto = new Date().toLocaleDateString('es-ES', opcionesFecha);
             document.getElementById('fecha-actual').innerText = "Actualizado al: " + fechaHoyTexto;
         }
 
-        // 4. Animar el contador
         function animarContador(elemento, objetivo, duracion) {
             let inicio = 0;
             const incremento = objetivo / (duracion / 16); 
@@ -302,9 +308,8 @@
             }, 16);
         }
 
-        // 5. Iniciar todo
         document.addEventListener('DOMContentLoaded', () => {
-            mostrarFechaActual(); // Imprime la fecha de hoy
+            mostrarFechaActual();
             const diasSegurosObj = calcularDias();
             const contadorElemento = document.getElementById('dias-seguros');
             const statsSection = document.getElementById('stats-section');
@@ -321,6 +326,19 @@
                     animado = true;
                 }
             });
+        });
+
+        // --- CÓDIGO DEL MENÚ HAMBURGUESA ---
+        const btnMenu = document.getElementById('mobileMenuBtn');
+        const navList = document.getElementById('mainNavList');
+
+        btnMenu.addEventListener('click', () => {
+            navList.classList.toggle('show');
+            if(navList.classList.contains('show')){
+                btnMenu.innerHTML = '<i class="fas fa-times"></i> CERRAR';
+            } else {
+                btnMenu.innerHTML = '<i class="fas fa-bars"></i> MENÚ';
+            }
         });
     </script>
 </body>

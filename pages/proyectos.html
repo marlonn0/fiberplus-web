@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos y Alcance | Fiberplus Cía. Ltda.</title>
     
+    <link rel="icon" type="image/png" href="../assets/img/logo-mini.png">
+
+    <meta property="og:title" content="Proyectos y Alcance | Fiberplus">
+    <meta property="og:description" content="Infraestructura desplegada y capacidad logística a nivel nacional. Movilizamos cuadrillas y maquinaria pesada a cualquier punto del país.">
+    <meta property="og:image" content="https://marlonn0.github.io/fiberplus-web/assets/img/fondo-proyectos.jpg">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="../css/proyectos.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -20,7 +27,7 @@
                 <span class="contact-hint">INGENIERÍA DE VANGUARDIA CERTIFICADA</span>
             </div>
             <div class="social-links-min">
-                <span class="follow-text">SÍGUENOS:</span>
+                <span class="follow-text mobile-hide">SÍGUENOS:</span>
                 <a href="https://www.facebook.com/share/1BLmzNNoT5/" target="_blank" class="top-fb"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/fiberplusecuador?igsh=MWhnYTc0a2ptdmc0cw==" target="_blank" class="top-ig"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/fiberplus-cia-ltda-773b88236" target="_blank" class="top-li"><i class="fab fa-linkedin-in"></i></a>
@@ -48,7 +55,10 @@
         </div>
 
         <nav class="nav-global">
-            <ul class="nav-list">
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i> MENÚ
+            </div>
+            <ul class="nav-list" id="mainNavList">
                 <li><a href="../index.html" class="nav-link">INICIO</a></li>
                 <li><a href="nosotros.html" class="nav-link">NOSOTROS</a></li>
                 <li><a href="negocios.html" class="nav-link">NEGOCIOS</a></li>
@@ -233,5 +243,18 @@
 
     <a href="https://wa.me/593987626160?text=Hola%20Fiberplus" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
+    <script>
+        const btnMenu = document.getElementById('mobileMenuBtn');
+        const navList = document.getElementById('mainNavList');
+
+        btnMenu.addEventListener('click', () => {
+            navList.classList.toggle('show');
+            if(navList.classList.contains('show')){
+                btnMenu.innerHTML = '<i class="fas fa-times"></i> CERRAR';
+            } else {
+                btnMenu.innerHTML = '<i class="fas fa-bars"></i> MENÚ';
+            }
+        });
+    </script>
 </body>
 </html>

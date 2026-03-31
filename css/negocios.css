@@ -47,8 +47,9 @@ p, .btn-main, .btn-card, .btn-cta-big { font-family: 'Titillium Web', sans-serif
 .main-title { font-family: 'Titillium Web', sans-serif !important; font-weight: 900; color: var(--oscuro); line-height: 0.9; font-size: 2.8rem; margin-top: 15px; text-transform: uppercase; max-width: 100%; }
 .v-accent { color: var(--verde); }
 
+/* ✅ ANIMACIÓN SUAVIZADA A 12 SEGUNDOS ✅ */
 @keyframes giroInfinito { from { transform: perspective(1000px) rotateY(0deg); } to { transform: perspective(1000px) rotateY(360deg); } }
-.img-14-ani { width: 240px; max-width: 100%; height: auto; display: block; margin-bottom: 15px; margin-top: 0; animation: giroInfinito 6s linear infinite; transform-style: preserve-3d; }
+.img-14-ani { width: 240px; max-width: 100%; height: auto; display: block; margin-bottom: 15px; margin-top: 0; animation: giroInfinito 12s linear infinite; transform-style: preserve-3d; }
 
 /* LOGO CENTRAL */
 .logo-c { display: flex; align-items: center; justify-content: center; width: 100%; }
@@ -66,11 +67,25 @@ p, .btn-main, .btn-card, .btn-cta-big { font-family: 'Titillium Web', sans-serif
     max-width: 320px;
 }
 
-.nav-global { margin-top: 15px; padding: 22px 0; border-top: 1px solid #f1f5f9; position: relative; z-index: 10; }
-.nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; }
+/* Menú */
+.nav-global { margin-top: 15px; padding: 0; border-top: 1px solid #f1f5f9; position: relative; z-index: 10; text-align: center; }
+
+/* ✅ BOTÓN HAMBURGUESA (OCULTO EN PC) ✅ */
+.mobile-menu-btn {
+    display: none;
+    background: var(--verde);
+    color: white;
+    padding: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; padding: 22px 0; transition: max-height 0.3s ease-out; }
 .nav-link { text-decoration: none; color: #0f172a; font-weight: 900; text-transform: uppercase; font-size: 1.1rem; }
 .nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); padding-bottom: 5px; }
-.nav-cta { background: var(--verde); color: white !important; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 900; }
+.nav-cta { background: var(--verde); color: white !important; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 900; display: inline-block;}
 
 /* --- 3. BANNER HERO (IMAGEN LOCAL 1) --- */
 .negocios-hero {
@@ -198,7 +213,7 @@ p, .btn-main, .btn-card, .btn-cta-big { font-family: 'Titillium Web', sans-serif
 .soc-icon.tk { background: #000000 !important; }
 .soc-icon:hover { transform: translateY(-5px); filter: brightness(1.15); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
-.footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; height: auto; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+.footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; height: auto; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid #d1d5db; }
 .highlight-card { border-top: 6px solid var(--azul); text-align: center; }
 .f-header { color: var(--verde); font-weight: 900; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
 
@@ -216,7 +231,36 @@ p, .btn-main, .btn-card, .btn-cta-big { font-family: 'Titillium Web', sans-serif
 .sgs-label { font-size: 0.8rem; letter-spacing: 1px; color: #64748b; font-weight: 800; }
 .sgs-note { font-weight: 700; color: var(--oscuro); }
 .f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
-.wa-float { position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; }
+
+/* ✅ BOTÓN FLOTANTE CON LATIDO (PULSE) ✅ */
+.wa-float { 
+    position: fixed; 
+    bottom: 50px; 
+    right: 50px; 
+    background: #25d366; 
+    color: white; 
+    width: 85px; 
+    height: 85px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 45px; 
+    z-index: 1000; 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3); 
+    text-decoration: none; 
+    animation: wa-pulse 2s infinite; 
+}
+.wa-float:hover {
+    animation: none;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+@keyframes wa-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
 
 /* RESPONSIVE MÓVIL ESTANDARIZADO */
 @media (max-width: 900px) {
@@ -239,7 +283,11 @@ p, .btn-main, .btn-card, .btn-cta-big { font-family: 'Titillium Web', sans-serif
 
     .info-bubble-premium { width: 90%; max-width: 320px; margin: 0 auto; text-align: center; }
     
-    .nav-list { flex-direction: column; gap: 0; padding: 0; }
+    /* ✅ ESTILOS DEL MENÚ HAMBURGUESA ACTIVO ✅ */
+    .mobile-menu-btn { display: block; }
+    .nav-list { flex-direction: column; gap: 0; padding: 0; max-height: 0; overflow: hidden; background: white;}
+    .nav-list.show { max-height: 500px; border-bottom: 1px solid #e2e8f0; }
+
     .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
     .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
     

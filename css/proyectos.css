@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
 
-/* --- BASES --- */
+/* --- 1. BASES --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -22,7 +22,8 @@ html, body {
     line-height: 0.9;
     font-size: 2.8rem; 
     text-transform: uppercase;
-    margin-top: 15px; /* Añadido para estandarizar */
+    margin-top: 15px;
+    max-width: 100%;
 }
 
 h2, h3, h4, .f-header {
@@ -92,7 +93,7 @@ p {
 .side-l { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; height: 100%; margin-top: 0; transform: none; }
 .v-accent { color: var(--verde); }
 
-/* --- ANIMACIÓN LOGO GIRATORIO --- */
+/* ✅ ANIMACIÓN SUAVIZADA A 12 SEGUNDOS ✅ */
 @keyframes giroInfinito {
     from { transform: perspective(1000px) rotateY(0deg); }
     to { transform: perspective(1000px) rotateY(360deg); }
@@ -105,10 +106,9 @@ p {
     display: block; 
     margin-bottom: 15px; 
     margin-top: 0;
-    animation: giroInfinito 6s linear infinite; 
+    animation: giroInfinito 12s linear infinite; 
     transform-style: preserve-3d;
 }
-/* -------------------------------- */
 
 /* LOGO CENTRAL (600px) */
 .logo-c { display: flex; align-items: center; justify-content: center; width: 100%; }
@@ -117,7 +117,7 @@ p {
 /* --- LADO DERECHO: CUADRITO DE MENSAJE ESTILIZADO --- */
 .side-r { display: flex; align-items: center; justify-content: flex-end; width: 100%; position: relative; }
 .info-bubble-premium { 
-    background: var(--gris-fondo); /* Fondo gris claro corporativo */
+    background: var(--gris-fondo); 
     padding: 20px; 
     border-radius: 15px; 
     border-left: 8px solid var(--verde); 
@@ -126,18 +126,31 @@ p {
     max-width: 320px;
 }
 
-.nav-global { margin-top: 15px; padding: 22px 0; border-top: 1px solid #f1f5f9; position: relative; z-index: 10;}
-.nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; }
+/* Menú */
+.nav-global { margin-top: 15px; padding: 0; border-top: 1px solid #f1f5f9; position: relative; z-index: 10; text-align: center; }
+
+/* ✅ BOTÓN HAMBURGUESA (OCULTO EN PC) ✅ */
+.mobile-menu-btn {
+    display: none;
+    background: var(--verde);
+    color: white;
+    padding: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; padding: 22px 0; transition: max-height 0.3s ease-out; }
 .nav-link { text-decoration: none; color: #0f172a; font-weight: 900; text-transform: uppercase; font-size: 1.1rem; }
 .nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); padding-bottom: 5px; }
-.nav-cta { background: var(--verde); color: white !important; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 900; }
+.nav-cta { background: var(--verde); color: white !important; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 900; display: inline-block;}
 
 /* --- HERO SECTION --- */
 .projects-hero {
     height: 550px; 
     width: 100%;
     background-color: #201751;
-    /* CAMBIO: Usamos tu imagen descargada */
     background: linear-gradient(rgba(32, 23, 81, 0.85), rgba(32, 23, 81, 0.85)), url('../assets/img/fondo-proyectos.jpg');
     background-size: cover;
     background-position: center;
@@ -229,7 +242,6 @@ p {
 .soc-icon.li { background: #0A66C2 !important; }
 .soc-icon.tk { background: #000000 !important; }
 .soc-icon:hover { transform: translateY(-5px); filter: brightness(1.15); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-/* -------------------------------------------------------- */
 
 .f-col-uniform { display: flex; flex-direction: column; }
 .footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; height: auto; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
@@ -250,9 +262,38 @@ p {
 .sgs-label { font-size: 0.8rem; letter-spacing: 1px; color: #64748b; font-weight: 800; }
 .sgs-note { font-weight: 700; color: var(--oscuro); }
 .f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
-.wa-float { position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; }
 
-/* Responsive (ESTANDARIZADO MÓVIL) */
+/* ✅ BOTÓN FLOTANTE CON LATIDO (PULSE) ✅ */
+.wa-float { 
+    position: fixed; 
+    bottom: 50px; 
+    right: 50px; 
+    background: #25d366; 
+    color: white; 
+    width: 85px; 
+    height: 85px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 45px; 
+    z-index: 1000; 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3); 
+    text-decoration: none; 
+    animation: wa-pulse 2s infinite; 
+}
+.wa-float:hover {
+    animation: none;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+@keyframes wa-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* RESPONSIVE MÓVIL ESTANDARIZADO */
 @media (max-width: 900px) {
     .top-brand-strip { height: auto; padding: 10px 0; }
     .social-top-bar { justify-content: center; flex-direction: column; gap: 10px; text-align: center; width: 100%;}
@@ -273,7 +314,11 @@ p {
 
     .info-bubble-premium { width: 90%; max-width: 320px; margin: 0 auto; text-align: center; }
     
-    .nav-list { flex-direction: column; gap: 0; padding: 0; }
+    /* ✅ ESTILOS DEL MENÚ HAMBURGUESA ACTIVO ✅ */
+    .mobile-menu-btn { display: block; }
+    .nav-list { flex-direction: column; gap: 0; padding: 0; max-height: 0; overflow: hidden; background: white;}
+    .nav-list.show { max-height: 500px; border-bottom: 1px solid #e2e8f0; }
+
     .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
     .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
     

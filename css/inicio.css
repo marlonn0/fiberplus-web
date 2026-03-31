@@ -9,8 +9,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --verde: #4ca686; /* Tu verde original de Fiberplus */
-    --azul: #385dae;  /* Tu azul original de Fiberplus */
+    --verde: #4ca686; 
+    --azul: #385dae;  
     --oscuro: #201751;
     --negro-tarjeta: #000000; 
     --gris-fondo: #f8fafc; 
@@ -30,108 +30,62 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
 .social-links-min a { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: white; border-radius: 50%; margin-left: 10px; text-decoration: none; font-size: 0.95rem; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 .top-fb { color: #1877F2 !important; } .top-ig { color: #E1306C !important; } .top-li { color: #0A66C2 !important; } .top-tk { color: #000000 !important; } 
 
-/* --- 2. HEADER PRINCIPAL (DIMENSIONES ORIGINALES RESPETADAS) --- */
+/* --- 2. HEADER PRINCIPAL --- */
 .master-header { background: white; padding: 10px 2% 0; border-bottom: 1px solid #e2e8f0; position: relative; } 
 .header-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; max-width: 1750px; margin: 0 auto; gap: 40px; }
 
-/* Lado Izquierdo */
 .side-l { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; height: 100%; }
 .main-title { font-family: 'Titillium Web', sans-serif !important; font-weight: 900; color: var(--oscuro); line-height: 0.9; letter-spacing: 0px; font-size: 2.8rem; text-transform: uppercase; margin-top: 15px; max-width: 100%;}
 .v-accent { color: var(--verde); }
+
+/* ✅ ANIMACIÓN SUAVIZADA A 12 SEGUNDOS ✅ */
 @keyframes giroInfinito { from { transform: perspective(1000px) rotateY(0deg); } to { transform: perspective(1000px) rotateY(360deg); } }
-.img-14-ani { width: 240px; max-width: 100%; display: block; margin-bottom: 15px; animation: giroInfinito 6s linear infinite; transform-style: preserve-3d; }
+.img-14-ani { width: 240px; max-width: 100%; display: block; margin-bottom: 15px; animation: giroInfinito 12s linear infinite; transform-style: preserve-3d; }
 
-/* LOGO CENTRAL (TAMAÑO ORIGINAL RESTAURADO Y CENTRADO) */
 .logo-c { display: flex; align-items: center; justify-content: center; width: 100%; }
-.img-500 { 
-    width: 600px; 
-    max-width: 100%; 
-    height: auto;
-    display: block; 
-    margin: 0 auto; 
-}
+.img-500 { width: 600px; max-width: 100%; height: auto; display: block; margin: 0 auto; }
 
-/* --- LADO DERECHO: TARJETA ESTILIZADA Y CLIC CORREGIDO --- */
-.side-r { 
-    display: flex; 
-    align-items: center; 
-    justify-content: flex-end; 
-    width: 100%; 
-    position: relative; 
-}
+.side-r { display: flex; align-items: center; justify-content: flex-end; width: 100%; position: relative; }
 .mpc-prominent-card { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
-    background: #ffffff; 
-    padding: 45px 30px; 
-    border-radius: 20px; 
-    border: 1px solid #e2e8f0; 
-    border-top: 8px solid var(--verde); 
-    box-shadow: 0 25px 70px rgba(0,0,0,0.18); 
-    text-decoration: none; 
-    width: auto; 
-    max-width: 380px; 
-    margin-left: auto; 
-    transform: translateY(-10px); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    gap: 15px; 
-    z-index: 20;
+    display: flex; flex-direction: column; align-items: center; text-align: center; 
+    background: #ffffff; padding: 45px 30px; border-radius: 20px; 
+    border: 1px solid #e2e8f0; border-top: 8px solid var(--verde); 
+    box-shadow: 0 25px 70px rgba(0,0,0,0.18); text-decoration: none; 
+    width: auto; max-width: 380px; margin-left: auto; 
+    transform: translateY(-10px); transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 15px; z-index: 20;
 }
-.mpc-prominent-card:hover { 
-    transform: translateY(-15px); 
-    box-shadow: 0 35px 80px rgba(76, 166, 134, 0.35); 
-}
+.mpc-prominent-card:hover { transform: translateY(-15px); box-shadow: 0 35px 80px rgba(76, 166, 134, 0.35); }
 
-.card-subtitle { 
-    background: #f1f5f9; 
-    color: #475569; 
-    padding: 8px 18px; 
-    border-radius: 30px; 
-    font-size: 0.75rem; 
-    font-weight: 800; 
-    letter-spacing: 1.5px; 
-    text-transform: uppercase; 
-    margin-bottom: 20px; 
-    display: inline-block;
-}
-
-.mpc-card-logo { 
-    width: 100%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    margin-bottom: 20px; 
-}
-.img-mpc-fluid { 
-    width: 100%; 
-    height: auto; 
-    object-fit: contain; 
-    transform: scale(2.2); 
-    max-height: 75px; 
-}
+.card-subtitle { background: #f1f5f9; color: #475569; padding: 8px 18px; border-radius: 30px; font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; display: inline-block;}
+.mpc-card-logo { width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.img-mpc-fluid { width: 100%; height: auto; object-fit: contain; transform: scale(2.2); max-height: 75px; }
 
 .mpc-card-text { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
 .card-desc { color: #64748b; font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; }
 
-.card-link { 
-    color: var(--verde); 
-    font-weight: 800; 
-    font-size: 1.05rem; 
-    display: flex; 
-    align-items: center; 
-    gap: 8px; 
-    transition: color 0.3s ease; 
-}
+.card-link { color: var(--verde); font-weight: 800; font-size: 1.05rem; display: flex; align-items: center; gap: 8px; transition: color 0.3s ease; }
 .mpc-prominent-card:hover .card-link { color: var(--oscuro); }
 
 /* --- 3. NAVEGACIÓN --- */
-.nav-global { margin-top: 15px; padding: 22px 0; border-top: 1px solid #f1f5f9; position: relative; z-index: 10; }
-.nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; }
+.nav-global { margin-top: 15px; padding: 0; border-top: 1px solid #f1f5f9; position: relative; z-index: 10; text-align: center; }
+
+/* ✅ BOTÓN HAMBURGUESA (OCULTO EN PC) ✅ */
+.mobile-menu-btn {
+    display: none;
+    background: var(--verde);
+    color: white;
+    padding: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; padding: 22px 0; transition: max-height 0.3s ease-out; }
 .nav-link { text-decoration: none; color: #0f172a; font-family: 'Titillium Web', sans-serif; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; }
 .nav-link.active { color: var(--verde); border-bottom: 5px solid var(--verde); padding-bottom: 5px;}
-.nav-cta { background: var(--verde); color: white; padding: 12px 25px; border-radius: 8px; font-weight: 900; text-decoration: none; }
+.nav-cta { background: var(--verde); color: white; padding: 12px 25px; border-radius: 8px; font-weight: 900; text-decoration: none; display: inline-block; }
 
 /* --- 4. HERO --- */
 .hero-clean { height: 500px; width: 100%; position: relative; background: url('../assets/img/portada-inicio.jpg') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
@@ -193,7 +147,7 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
 .highlight-card { border-top: 6px solid var(--azul); text-align: center; }
 .f-header { color: var(--verde); font-weight: 900; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
 
-/* ✅ ESTILOS DE LOS ENLACES DE CONTACTO (TELÉFONO / CORREO) ✅ */
+/* ✅ ESTILOS DE LOS ENLACES DE CONTACTO ✅ */
 .contact-list li { display: flex; align-items: center; margin-bottom: 10px; color: #334155; font-weight: 600; gap: 10px; }
 .contact-list li i { color: var(--azul); width: 25px; font-size: 1.1rem; }
 .contact-link { color: #334155; text-decoration: none; transition: all 0.3s ease; display: inline-block; }
@@ -207,7 +161,37 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
 .sgs-label { font-size: 0.8rem; letter-spacing: 1px; color: #64748b; font-weight: 800; }
 .sgs-note { font-weight: 700; color: var(--oscuro); }
 .f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
-.wa-float { position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; }
+
+/* ✅ BOTÓN FLOTANTE CON LATIDO (PULSE) ✅ */
+.wa-float { 
+    position: fixed; 
+    bottom: 50px; 
+    right: 50px; 
+    background: #25d366; 
+    color: white; 
+    width: 85px; 
+    height: 85px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 45px; 
+    z-index: 1000; 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3); 
+    text-decoration: none; 
+    animation: wa-pulse 2s infinite; 
+}
+.wa-float:hover {
+    animation: none;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+@keyframes wa-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
 
 /* =========================================
    REGLAS PARA CELULARES Y TABLETS
@@ -240,7 +224,11 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
     .mpc-prominent-card:hover { transform: translateY(-5px); }
     .img-mpc-fluid { transform: scale(1.8); max-height: 55px; } 
     
-    .nav-list { flex-direction: column; gap: 0; padding: 0; }
+    /* ✅ ESTILOS DEL MENÚ HAMBURGUESA ACTIVO ✅ */
+    .mobile-menu-btn { display: block; }
+    .nav-list { flex-direction: column; gap: 0; padding: 0; max-height: 0; overflow: hidden; background: white;}
+    .nav-list.show { max-height: 500px; border-bottom: 1px solid #e2e8f0; }
+    
     .nav-link { display: block; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
     .nav-link.active { border-bottom: none;}
     .nav-cta { display: block; margin: 20px auto; width: 80%; text-align: center; }
