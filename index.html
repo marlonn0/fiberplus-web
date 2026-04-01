@@ -20,9 +20,16 @@
 
     <div class="top-brand-strip">
         <div class="social-top-bar">
-            <div class="top-logo-container">
-                <img src="assets/img/logo-mini.png" alt="Fiberplus" class="top-bar-logo">
+            
+            <div class="top-left-group">
+                <div class="top-logo-container">
+                    <img src="assets/img/logo-mini.png" alt="Fiberplus" class="top-bar-logo">
+                </div>
+                <a href="#" id="btnAbrirLogin" class="btn-top-login">
+                    <i class="fas fa-user-circle"></i> ACCEDER
+                </a>
             </div>
+
             <div class="top-text-center">
                 <span class="contact-hint">INGENIERÍA DE VANGUARDIA CERTIFICADA</span>
             </div>
@@ -226,6 +233,37 @@
         </div>
     </footer>
 
+    <div id="modalLogin" class="modal-overlay">
+        <div class="login-card">
+            <span class="close-login" id="btnCerrarLogin">&times;</span>
+            <div class="login-header">
+                <img src="assets/img/logo-fiberplus.png" alt="Fiberplus" class="login-logo">
+                <h3>Portal Operativo</h3>
+                <p>Ingresa tus credenciales de acceso</p>
+            </div>
+            <form id="formLogin" class="login-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="usuario" placeholder="Usuario" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                </div>
+                
+                <div class="login-recovery">
+                    <a href="#" id="recuperarUsuario">¿Olvidó su usuario?</a>
+                    <span class="divider">|</span>
+                    <a href="#" id="recuperarPass">¿Olvidó su contraseña?</a>
+                </div>
+
+                <p id="loginError" class="login-error" style="display: none; color: #ef4444; font-size: 0.85rem; margin-top: 5px; margin-bottom: 10px; text-align: center; font-weight: 700;">Usuario o contraseña incorrectos.</p>
+                
+                <button type="submit" class="btn-login">INGRESAR</button>
+            </form>
+        </div>
+    </div>
+
     <a href="https://wa.me/593987626160?text=Hola%20Fiberplus,%20quisiera%20m%C3%A1s%20informaci%C3%B3n" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
@@ -239,6 +277,51 @@
             } else {
                 btnMenu.innerHTML = '<i class="fas fa-bars"></i> MENÚ';
             }
+        });
+
+        // Modal Login Flotante
+        const modalLogin = document.getElementById('modalLogin');
+        const btnAbrir = document.getElementById('btnAbrirLogin');
+        const btnCerrar = document.getElementById('btnCerrarLogin');
+        const formLogin = document.getElementById('formLogin');
+        const loginError = document.getElementById('loginError');
+
+        btnAbrir.addEventListener('click', (e) => {
+            e.preventDefault();
+            modalLogin.classList.add('show-modal');
+        });
+
+        btnCerrar.addEventListener('click', () => {
+            modalLogin.classList.remove('show-modal');
+            loginError.style.display = 'none';
+            formLogin.reset();
+        });
+
+        // ✅ REDIRECCIÓN AL PORTAL EN LA NUBE ✅
+        formLogin.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Convertimos a minúsculas y quitamos espacios
+            const user = document.getElementById('usuario').value.toLowerCase().trim();
+            const pass = document.getElementById('password').value.trim();
+
+            // 🔑 USUARIO GENÉRICO PARA TODO EL EQUIPO 🔑
+            if(user === 'operaciones' && pass === 'fiber2026') {
+                // REDIRIGE AL LINK REAL DE GITHUB
+                window.location.href = 'https://marlonn0.github.io/fiberplus-portal/'; 
+            } else {
+                loginError.style.display = 'block';
+            }
+        });
+
+        // Alertas temporales para los botones de recuperación
+        document.getElementById('recuperarUsuario').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Para recuperar su usuario, contacte a soporte técnico o RRHH.');
+        });
+        document.getElementById('recuperarPass').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('En la versión final, esto enviará un enlace de recuperación a su correo electrónico asociado.');
         });
     </script>
 </body>

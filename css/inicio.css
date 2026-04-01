@@ -20,11 +20,43 @@
 
 html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--blanco); width: 100%; max-width: 100%; overflow-x: hidden; }
 
-/* --- 1. TOP BAR --- */
+/* --- 1. TOP BAR Y BOTÓN DE ACCESO --- */
 .top-brand-strip { height: 48px; background: linear-gradient(90deg, var(--azul), var(--verde)); display: flex; align-items: center; justify-content: center; }
 .social-top-bar { width: 95%; max-width: 1750px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 0.85rem; position: relative;}
+
+/* ✅ GRUPO: LOGO + BOTÓN ACCEDER PREMIUM ✅ */
+.top-left-group { display: flex; align-items: center; gap: 25px; }
 .top-logo-container { height: 40px; width: 110px; display: flex; align-items: center; justify-content: center; position: relative; top: -3px; z-index: 10; }
 .top-bar-logo { height: 100%; width: 100%; object-fit: contain; transform: scale(3.5); filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3)); }
+
+.btn-top-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #14b8a6, #0ea5e9);
+    box-shadow: 0 4px 15px rgba(20, 184, 166, 0.4);
+    text-transform: uppercase;
+    position: relative;
+    z-index: 50; /* ✅ CORRECCIÓN DEL CLIC ✅ */
+}
+.btn-top-login:hover {
+    background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6);
+    color: white;
+}
+.btn-top-login i { font-size: 1.15rem; }
+
 .top-text-center { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
 .social-links-min { display: flex; align-items: center; margin-right: 15px; }
 .social-links-min a { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: white; border-radius: 50%; margin-left: 10px; text-decoration: none; font-size: 0.95rem; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
@@ -38,7 +70,7 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
 .main-title { font-family: 'Titillium Web', sans-serif !important; font-weight: 900; color: var(--oscuro); line-height: 0.9; letter-spacing: 0px; font-size: 2.8rem; text-transform: uppercase; margin-top: 15px; max-width: 100%;}
 .v-accent { color: var(--verde); }
 
-/* ✅ ANIMACIÓN SUAVIZADA A 12 SEGUNDOS ✅ */
+/* ANIMACIÓN LOGO */
 @keyframes giroInfinito { from { transform: perspective(1000px) rotateY(0deg); } to { transform: perspective(1000px) rotateY(360deg); } }
 .img-14-ani { width: 240px; max-width: 100%; display: block; margin-bottom: 15px; animation: giroInfinito 12s linear infinite; transform-style: preserve-3d; }
 
@@ -70,17 +102,7 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
 /* --- 3. NAVEGACIÓN --- */
 .nav-global { margin-top: 15px; padding: 0; border-top: 1px solid #f1f5f9; position: relative; z-index: 10; text-align: center; }
 
-/* ✅ BOTÓN HAMBURGUESA (OCULTO EN PC) ✅ */
-.mobile-menu-btn {
-    display: none;
-    background: var(--verde);
-    color: white;
-    padding: 15px;
-    font-weight: 900;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+.mobile-menu-btn { display: none; background: var(--verde); color: white; padding: 15px; font-weight: 900; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
 
 .nav-list { display: flex; justify-content: center; list-style: none; gap: 40px; padding: 22px 0; transition: max-height 0.3s ease-out; }
 .nav-link { text-decoration: none; color: #0f172a; font-family: 'Titillium Web', sans-serif; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; }
@@ -146,13 +168,10 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
 .footer-card { background: var(--gris-fondo); padding: 30px; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid #d1d5db; }
 .highlight-card { border-top: 6px solid var(--azul); text-align: center; }
 .f-header { color: var(--verde); font-weight: 900; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
-
-/* ✅ ESTILOS DE LOS ENLACES DE CONTACTO ✅ */
 .contact-list li { display: flex; align-items: center; margin-bottom: 10px; color: #334155; font-weight: 600; gap: 10px; }
 .contact-list li i { color: var(--azul); width: 25px; font-size: 1.1rem; }
 .contact-link { color: #334155; text-decoration: none; transition: all 0.3s ease; display: inline-block; }
 .contact-link:hover { color: var(--verde); transform: translateX(5px); }
-
 .divider-mini { border-top: 1px solid #cbd5e1; margin: 15px 0; }
 .loc-title { font-weight: 900; color: var(--oscuro); font-size: 0.95rem; margin-bottom: 5px; }
 .loc-text { font-size: 0.85rem; color: #64748b; line-height: 1.4; margin-bottom: 15px; }
@@ -162,43 +181,88 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
 .sgs-note { font-weight: 700; color: var(--oscuro); }
 .f-bottom-copyright { background: var(--oscuro); color: white; padding: 35px; text-align: center; font-weight: 700; }
 
-/* ✅ BOTÓN FLOTANTE CON LATIDO (PULSE) ✅ */
 .wa-float { 
-    position: fixed; 
-    bottom: 50px; 
-    right: 50px; 
-    background: #25d366; 
-    color: white; 
-    width: 85px; 
-    height: 85px; 
-    border-radius: 50%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    font-size: 45px; 
-    z-index: 1000; 
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3); 
-    text-decoration: none; 
-    animation: wa-pulse 2s infinite; 
+    position: fixed; bottom: 50px; right: 50px; background: #25d366; color: white; width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; z-index: 1000; box-shadow: 0 15px 30px rgba(0,0,0,0.3); text-decoration: none; animation: wa-pulse 2s infinite; 
 }
-.wa-float:hover {
-    animation: none;
-    transform: scale(1.1);
+.wa-float:hover { animation: none; transform: scale(1.1); transition: 0.3s; }
+@keyframes wa-pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+/* =========================================
+   ESTILOS DE LA TARJETA DE LOGIN (PORTAL FLOTANTE)
+   ========================================= */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(32, 23, 81, 0.9); z-index: 10000;
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; visibility: hidden; transition: 0.3s ease; backdrop-filter: blur(8px);
+}
+.modal-overlay.show-modal { opacity: 1; visibility: visible; }
+.login-card {
+    background: white; width: 90%; max-width: 420px; padding: 50px 40px;
+    border-radius: 20px; position: relative; transform: translateY(-30px);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4); border-top: 10px solid #4ca686;
+}
+.modal-overlay.show-modal .login-card { transform: translateY(0); }
+.close-login {
+    position: absolute; top: 20px; right: 25px; font-size: 32px;
+    color: #cbd5e1; cursor: pointer; transition: 0.3s;
+}
+.close-login:hover { color: #ef4444; }
+.login-header { text-align: center; margin-bottom: 35px; }
+.login-logo { width: 200px; margin-bottom: 20px; }
+.login-header h3 { color: #201751; font-size: 1.6rem; font-weight: 900; text-transform: uppercase; }
+.login-header p { color: #64748b; font-size: 1rem; }
+.input-group { position: relative; margin-bottom: 25px; }
+.input-group i { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: #4ca686; font-size: 1.1rem; }
+.input-group input {
+    width: 100%; padding: 16px 16px 16px 50px; border: 2px solid #e2e8f0;
+    border-radius: 10px; font-family: inherit; font-size: 1rem; transition: 0.3s;
+}
+.input-group input:focus { border-color: #4ca686; outline: none; box-shadow: 0 0 0 4px rgba(76, 166, 134, 0.1); }
+
+/* ✅ ESTILOS PARA LOS ENLACES DE RECUPERACIÓN ✅ */
+.login-recovery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    margin-top: -5px;
+    font-size: 0.85rem;
+}
+.login-recovery a {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 700;
     transition: 0.3s;
 }
-
-@keyframes wa-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+.login-recovery a:hover {
+    color: #4ca686;
+    text-decoration: underline;
 }
+.login-recovery .divider {
+    color: #cbd5e1;
+}
+
+.btn-login {
+    width: 100%; background: #4ca686; color: white; border: none;
+    padding: 18px; border-radius: 10px; font-weight: 900; font-size: 1.1rem;
+    cursor: pointer; transition: 0.3s; letter-spacing: 1px; text-transform: uppercase;
+}
+.btn-login:hover { background: #201751; transform: translateY(-2px); }
 
 /* =========================================
    REGLAS PARA CELULARES Y TABLETS
    ========================================= */
 @media (max-width: 900px) {
     .top-brand-strip { height: auto; padding: 10px 0; }
-    .social-top-bar { justify-content: center; flex-direction: column; gap: 10px; text-align: center; width: 100%;}
+    
+    /* Adaptación del grupo del logo y botón en móvil */
+    .top-left-group { width: 100%; display: flex; justify-content: center; margin-bottom: 10px; }
+    .btn-top-login { padding: 8px 25px; font-size: 0.9rem; }
+    
+    .social-top-bar { justify-content: center; flex-direction: column; gap: 5px; text-align: center; width: 100%;}
     .top-logo-container { display: none; }
     .top-text-center { display: none; position: static; transform: none; } 
     .social-links-min { justify-content: center; margin-right: 0;}
@@ -214,17 +278,10 @@ html, body { font-family: 'Titillium Web', sans-serif; background-color: var(--b
     .img-14-ani { width: 180px; margin-bottom: 10px; }
     .main-title { font-size: 2.2rem; line-height: 1.1; margin-top: 15px; }
 
-    .mpc-prominent-card { 
-        width: 90%; max-width: 320px; 
-        padding: 45px 30px; 
-        margin: 0 auto; 
-        transform: translateY(0); 
-        gap: 15px; 
-    }
+    .mpc-prominent-card { width: 90%; max-width: 320px; padding: 45px 30px; margin: 0 auto; transform: translateY(0); gap: 15px; }
     .mpc-prominent-card:hover { transform: translateY(-5px); }
     .img-mpc-fluid { transform: scale(1.8); max-height: 55px; } 
     
-    /* ✅ ESTILOS DEL MENÚ HAMBURGUESA ACTIVO ✅ */
     .mobile-menu-btn { display: block; }
     .nav-list { flex-direction: column; gap: 0; padding: 0; max-height: 0; overflow: hidden; background: white;}
     .nav-list.show { max-height: 500px; border-bottom: 1px solid #e2e8f0; }
