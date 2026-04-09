@@ -297,24 +297,32 @@
             formLogin.reset();
         });
 
-        // ✅ REDIRECCIÓN AL PORTAL EN LA NUBE ✅
+        // ✅ NUEVA LÓGICA DE LOGIN CON ROLES CORREGIDA ✅
         formLogin.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Convertimos a minúsculas y quitamos espacios
             const user = document.getElementById('usuario').value.toLowerCase().trim();
             const pass = document.getElementById('password').value.trim();
+            
+            // RUTA CORREGIDA: Apunta directo a la raíz de tu repositorio portal
+            const targetURL = 'https://marlonn0.github.io/fiberplus-portal/';
 
-            // 🔑 USUARIO GENÉRICO PARA TODO EL EQUIPO 🔑
-            if(user === 'operaciones' && pass === 'fiber2026') {
-                // REDIRIGE AL LINK REAL DE GITHUB
-                window.location.href = 'https://marlonn0.github.io/fiberplus-portal/'; 
-            } else {
+            // 1. Validar Administrador
+            if(user === 'coordinacion' && pass === 'MasterFiber26') {
+                localStorage.setItem("fiberplus_rol", "administrador");
+                window.location.href = targetURL;
+            } 
+            // 2. Validar Operaciones (Técnicos)
+            else if(user === 'operaciones' && pass === 'fiber2026') {
+                localStorage.setItem("fiberplus_rol", "operador");
+                window.location.href = targetURL; 
+            } 
+            // 3. Error
+            else {
                 loginError.style.display = 'block';
             }
         });
 
-        // Alertas temporales para los botones de recuperación
         document.getElementById('recuperarUsuario').addEventListener('click', (e) => {
             e.preventDefault();
             alert('Para recuperar su usuario, contacte a soporte técnico o RRHH.');
