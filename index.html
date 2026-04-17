@@ -9,8 +9,8 @@
 
     <meta property="og:title" content="Fiberplus Cía. Ltda. | Ingeniería y Construcción">
     <meta property="og:description" content="Líderes en diseño, construcción y mantenimiento de infraestructura de telecomunicaciones y fibra óptica a nivel nacional.">
-    <meta property="og:image" content="https://marlonn0.github.io/fiberplus-web/assets/img/portada-inicio.jpg">
-    <meta property="og:url" content="https://marlonn0.github.io/fiberplus-web/">
+    <meta property="og:image" content="https://fiberplus.com.ec/assets/img/portada-inicio.jpg">
+    <meta property="og:url" content="https://fiberplus.com.ec/">
     <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="css/inicio.css">
@@ -297,15 +297,15 @@
             formLogin.reset();
         });
 
-        // ✅ NUEVA LÓGICA DE LOGIN CON ROLES CORREGIDA ✅
+        // ✅ LÓGICA DE LOGIN APUNTANDO A LA CARPETA DEL PORTAL EN TU SERVIDOR ✅
         formLogin.addEventListener('submit', (e) => {
             e.preventDefault();
             
             const user = document.getElementById('usuario').value.toLowerCase().trim();
             const pass = document.getElementById('password').value.trim();
             
-            // RUTA CORREGIDA: Apunta directo a la raíz de tu repositorio portal
-            const targetURL = 'https://marlonn0.github.io/fiberplus-portal/';
+            // LA RUTA CORREGIDA: Apunta a la carpeta "portal" que crearás en Plesk
+            const targetURL = 'portal/pages/inicio.html';
 
             // 1. Validar Administrador
             if(user === 'coordinacion' && pass === 'MasterFiber26') {
