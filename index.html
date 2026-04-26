@@ -279,7 +279,6 @@
             }
         });
 
-        // Modal Login Flotante
         const modalLogin = document.getElementById('modalLogin');
         const btnAbrir = document.getElementById('btnAbrirLogin');
         const btnCerrar = document.getElementById('btnCerrarLogin');
@@ -297,27 +296,24 @@
             formLogin.reset();
         });
 
-        // ✅ LÓGICA DE LOGIN APUNTANDO A LA CARPETA DEL PORTAL EN TU SERVIDOR ✅
+        // ✅ LÓGICA DE LOGIN CON RUTA ABSOLUTA BLINDADA ✅
         formLogin.addEventListener('submit', (e) => {
             e.preventDefault();
             
             const user = document.getElementById('usuario').value.toLowerCase().trim();
             const pass = document.getElementById('password').value.trim();
             
-            // LA RUTA CORREGIDA: Apunta a la carpeta "portal" que crearás en Plesk
-            const targetURL = 'portal/pages/inicio.html';
+            // LA RUTA BLINDADA: Te lleva directamente al dominio oficial
+            const targetURL = 'https://fiberplus.com.ec/portal/pages/inicio.html';
 
-            // 1. Validar Administrador
             if(user === 'coordinacion' && pass === 'MasterFiber26') {
                 localStorage.setItem("fiberplus_rol", "administrador");
                 window.location.href = targetURL;
             } 
-            // 2. Validar Operaciones (Técnicos)
             else if(user === 'operaciones' && pass === 'fiber2026') {
                 localStorage.setItem("fiberplus_rol", "operador");
                 window.location.href = targetURL; 
             } 
-            // 3. Error
             else {
                 loginError.style.display = 'block';
             }
@@ -333,4 +329,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
